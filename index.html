@@ -7,9 +7,9 @@
 </head>
 <body>
 
-<h2>Final Projects</h2>
+<!-- Main Layout -->
+<h2>MakerSquare Final Projects</h2>
 <p>See the Final Projects in Real Time</p>
-
 <div id="commit-messages-wrap"></div>
 
 <!-- Riot.js Templates for use around the app with javascript -->
@@ -36,7 +36,6 @@
 <script src="js/presenters/repo-commits.js"></script>
 <script type="text/javascript">
 	$(document).ready(function() {
-
 		// Loop through the repos
 		for (var key in repos) {
 		   var obj = repos[key];
@@ -47,25 +46,13 @@
 		      if(obj.hasOwnProperty(prop)){
 		      	if (prop === "user") { user = obj[prop] }
 		      	if (prop === "repo") { repo = obj[prop] }
-		        // console.log("Link to repo: ", prop + " = " + obj[prop]);
 		      }
 		   }
 		   var repoUrl = "https://api.github.com/repos/" + user + "/" + repo + "/commits";
-		   console.log('Link to repo: ', repoUrl);
-		   // renderRepo(repo, repoUrl, "#commit-messages-wrap");
+		   // console.log('Link to repo: ', repoUrl);
 		   x = new githubRepo(repo, repoUrl, "#commit-messages-wrap");
 		   x.render();
 		}
-
-		// get the data back from github API
-		// x = new githubRepo('recruit', 'https://api.github.com/repos/makersquare/recruit/commits', "#commit-messages-wrap")
-		// x.render()
-
-		// var renderRepo = function(repoName, repoUrl, root) {
-		// 	x = new githubRepo(repoName, repoUrl, root);
-		// 	x.render();
-		// };
-
 	});
 </script>
 
