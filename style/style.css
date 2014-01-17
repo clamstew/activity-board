@@ -1,11 +1,19 @@
-* {
-	font-family: sans-serif;
-}
-#templates {
-	display: none; }
+* { font-family: sans-serif; }
+#templates { display: none; }
 .commit-message {
 	border: 1px solid #ccc;
 	padding: 5px;
+	width: 188px;
 }
 .recent { color: green; }
 .past-day { color: orange;}
+
+.individual-repo-wrap {
+	width: 200px;
+	height: 200px;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	border: 2px solid black;
+	display: inline-block;
+	float: left;
+}

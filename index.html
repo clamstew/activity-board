@@ -10,24 +10,31 @@
 <h2>Final Projects</h2>
 <p>See the Final Projects in Real Time</p>
 
-<div id="commit-messages"></div>
+<div id="commit-messages-wrap"></div>
 
 <!-- Riot.js Templates for use around the app with javascript -->
 <div id="templates">
   <script type="text/template"  class="commit">
-    <div class="commit-message { recent }">
+    <div class="commit-message { recent }" data-repo="{ id }">
         <strong>{ user }:</strong> { message }<br />
         <small>{ date }</small>
     </div>
   </script>
 </div>
 
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<script src="js/utils.js"></script>
-<script src="js/vendor/riot.js"></script>
-<script src="js/models/repos.js"></script>
-<script type="text/javascript">
 
+<!-- The Javascripts -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<!-- Utility functions -->
+<script src="js/utils.js"></script>
+<!-- Riot.js -->
+<script src="js/vendor/riot.js"></script>
+<!-- Riot.js Models -->
+<script src="js/models/repos-json.js"></script>
+<script src="js/models/repos.js"></script>
+<!-- Riot.js Presenters -->
+<script src="js/presenters/repo-commits.js"></script>
+<script type="text/javascript">
 	$(document).ready(function() {
 
 		// Loop through the repos
@@ -43,52 +50,23 @@
 		        // console.log("Link to repo: ", prop + " = " + obj[prop]);
 		      }
 		   }
-		   console.log('Link to repo: ', "https://api.github.com/repos/" + user + "/" + repo + "/commits");
+		   var repoUrl = "https://api.github.com/repos/" + user + "/" + repo + "/commits";
+		   console.log('Link to repo: ', repoUrl);
+		   // renderRepo(repo, repoUrl, "#commit-messages-wrap");
+		   x = new githubRepo(repo, repoUrl, "#commit-messages-wrap");
+		   x.render();
 		}
 
-		$.get('https://api.github.com/repos/makersquare/recruit/commits',
-			function(data) {
-				console.log(data);
-				renderCommits(data);
-		}, 'json');
+		// get the data back from github API
+		// x = new githubRepo('recruit', 'https://api.github.com/repos/makersquare/recruit/commits', "#commit-messages-wrap")
+		// x.render()
+
+		// var renderRepo = function(repoName, repoUrl, root) {
+		// 	x = new githubRepo(repoName, repoUrl, root);
+		// 	x.render();
+		// };
+
 	});
-
-	var renderCommits = function(commits) {
-	  console.log('data returned by github commit api for matchsetter repo', commits);
-	  var $root = $('div#commit-messages')
-	    , commitTemplate = $("#templates .commit").html()
-	  ;
-	  for (var i = 0; i <= commits.length; i += 1) {
-	  	var currentdatetimeMinusTwo = new Date().minusHours(2);
-	  	var currentdatetimeMinusDay = new Date().minusHours(24);
-	  	// console.log('2 hours ago', currentdatetimeMinusTwo);
-	    var date = new Date(commits[i].commit['author']["date"]);
-
-	    var recent;
-	    if ( date > currentdatetimeMinusTwo ) {
-	    	recent = "recent";
-	    } else if ( date > currentdatetimeMinusDay && date < currentdatetimeMinusTwo ) {
-	    	recent = "past-day";
-	    } else {
-	    	recent = "";
-	    }
-
-	    window.commitStuffs = {
-	    	message: commits[i].commit["message"],
-	    	user: commits[i].author["login"],
-	    	date: date.toLocaleDateString() + " - " + date.toLocaleTimeString(),
-	    	recent: recent
-	    }
-	    console.log('past day !! ', commitStuffs['recent'] );
-	    var commitHtml = $.render(commitTemplate, commitStuffs);
-	    $root.append(commitHtml);
-	  }
-	};
-
-	// the riot presenter for each repo
-	(function () {
-		//
-	})();
 </script>
 
 </body>
