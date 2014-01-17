@@ -3,16 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>The Control Room</title>
-
-	<style type="text/css">
-		#templates { display: none; }
-		.commit-message {
-			border: 1px solid #ccc;
-			padding: 5px;
-		}
-		.recent { color: green; }
-		.past-day { color: orange;}
-	</style>
+	<link rel="stylesheet" type="text/css" href="style/style.css">
 </head>
 <body>
 
@@ -32,20 +23,35 @@
 </div>
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<script src="riot.js"></script>
-<script src="repos.js"></script>
+<script src="js/utils.js"></script>
+<script src="js/vendor/riot.js"></script>
+<script src="js/models/repos.js"></script>
 <script type="text/javascript">
-	//for adding hours to a date
-	Date.prototype.minusHours = function(hrs) {
-	    this.setHours(this.getHours() - hrs);
-	    return this;
-	}
 
-	$.get('https://api.github.com/repos/makersquare/recruit/commits',
-		function(data) {
-			console.log(data);
-			renderCommits(data);
-	}, 'json');
+	$(document).ready(function() {
+
+		// Loop through the repos
+		for (var key in repos) {
+		   var obj = repos[key];
+		   var user, repo;
+		   for (var prop in obj) {
+		      // important check that this is objects own property
+		      // not from prototype prop inherited
+		      if(obj.hasOwnProperty(prop)){
+		      	if (prop === "user") { user = obj[prop] }
+		      	if (prop === "repo") { repo = obj[prop] }
+		        // console.log("Link to repo: ", prop + " = " + obj[prop]);
+		      }
+		   }
+		   console.log('Link to repo: ', "https://api.github.com/repos/" + user + "/" + repo + "/commits");
+		}
+
+		$.get('https://api.github.com/repos/makersquare/recruit/commits',
+			function(data) {
+				console.log(data);
+				renderCommits(data);
+		}, 'json');
+	});
 
 	var renderCommits = function(commits) {
 	  console.log('data returned by github commit api for matchsetter repo', commits);
@@ -78,6 +84,11 @@
 	    $root.append(commitHtml);
 	  }
 	};
+
+	// the riot presenter for each repo
+	(function () {
+		//
+	})();
 </script>
 
 </body>

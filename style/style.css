@@ -1,0 +1,11 @@
+* {
+	font-family: sans-serif;
+}
+#templates {
+	display: none; }
+.commit-message {
+	border: 1px solid #ccc;
+	padding: 5px;
+}
+.recent { color: green; }
+.past-day { color: orange;}

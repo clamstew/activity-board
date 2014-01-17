@@ -10,5 +10,13 @@ window.repos = {
 	2: {
 		user: "amhayslip",
 		repo: "goforit"
+	},
+	3: {
+		user: "krytlewski",
+		repo: "remory"
+	},
+	4: {
+		user: "RollWave07",
+		repo: "CareWell"
 	}
 };
