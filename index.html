@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>The Control Room</title>
+
+	<style type="text/css">
+		#templates { display: none; }
+		.commit-message {
+			border: 1px solid #ccc;
+			padding: 5px;
+		}
+		.recent { color: green; }
+		.past-day { color: orange;}
+	</style>
+</head>
+<body>
+
+<h2>Final Projects</h2>
+<p>See the Final Projects in Real Time</p>
+
+<div id="commit-messages"></div>
+
+<!-- Riot.js Templates for use around the app with javascript -->
+<div id="templates">
+  <script type="text/template"  class="commit">
+    <div class="commit-message { recent }">
+        <strong>{ user }:</strong> { message }<br />
+        <small>{ date }</small>
+    </div>
+  </script>
+</div>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="riot.js"></script>
+<script src="repos.js"></script>
+<script type="text/javascript">
+	//for adding hours to a date
+	Date.prototype.minusHours = function(hrs) {
+	    this.setHours(this.getHours() - hrs);
+	    return this;
+	}
+
+	$.get('https://api.github.com/repos/makersquare/recruit/commits',
+		function(data) {
+			console.log(data);
+			renderCommits(data);
+	}, 'json');
+
+	var renderCommits = function(commits) {
+	  console.log('data returned by github commit api for matchsetter repo', commits);
+	  var $root = $('div#commit-messages')
+	    , commitTemplate = $("#templates .commit").html()
+	  ;
+	  for (var i = 0; i <= commits.length; i += 1) {
+	  	var currentdatetimeMinusTwo = new Date().minusHours(2);
+	  	var currentdatetimeMinusDay = new Date().minusHours(24);
+	  	// console.log('2 hours ago', currentdatetimeMinusTwo);
+	    var date = new Date(commits[i].commit['author']["date"]);
+
+	    var recent;
+	    if ( date > currentdatetimeMinusTwo ) {
+	    	recent = "recent";
+	    } else if ( date > currentdatetimeMinusDay && date < currentdatetimeMinusTwo ) {
+	    	recent = "past-day";
+	    } else {
+	    	recent = "";
+	    }
+
+	    window.commitStuffs = {
+	    	message: commits[i].commit["message"],
+	    	user: commits[i].author["login"],
+	    	date: date.toLocaleDateString() + " - " + date.toLocaleTimeString(),
+	    	recent: recent
+	    }
+	    console.log('past day !! ', commitStuffs['recent'] );
+	    var commitHtml = $.render(commitTemplate, commitStuffs);
+	    $root.append(commitHtml);
+	  }
+	};
+</script>
+
+</body>
+</html>
