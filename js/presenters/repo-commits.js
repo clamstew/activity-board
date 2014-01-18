@@ -33,6 +33,7 @@
                     id: repoName,
                     message: commits[i].commit["message"],
                     user: commits[i].author["login"],
+                    link: commits[i].html_url,
                     date: date.toLocaleDateString() + " - " + date.toLocaleTimeString(),
                     recent: recent
                 };

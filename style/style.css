@@ -7,6 +7,13 @@ h2, p { color: #1189d9; text-align: center; }
 	padding: 5px;
 	width: 188px;
 }
+.commit-message a {
+	text-decoration: none;
+	color: inherit;
+}
+.commit-message a:hover {
+	text-decoration: underline;
+}
 .recent { color: green; }
 .past-day { color: orange;}
 
