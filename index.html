@@ -76,6 +76,8 @@
 		$(window).on('resize', function() {
 			windowheight = +$(document).height();
 			$('aside').css("height", windowheight);
+			windowh = +$(window).height() - 20;
+			$('aside').css("height", windowh);
 		});
 	});
 </script>
