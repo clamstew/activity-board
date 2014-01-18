@@ -64,6 +64,14 @@
 		   x = new githubRepo(repo, repoUrl, "#commit-messages-wrap");
 		   x.render();
 		}
+
+		// adjust the height of the sidebar
+		var windowh = +$(document).height();
+		$('aside').css("height", windowh);
+		$(window).on('resize', function() {
+			windowheight = +$(document).height();
+			$('aside').css("height", windowheight);
+		});
 	});
 </script>
 
