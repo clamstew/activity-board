@@ -1,7 +1,7 @@
 // the riot presenter for each repo
 (function () {
 
-    window.renderCommits =function(root) {
+    window.renderCommits = function(root) {
         var root = root;
         return {
             createClass : function(date, currentdatetimeMinusTwo, currentdatetimeMinusDay) {
