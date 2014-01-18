@@ -1,6 +1,7 @@
-window.githubRepo = function(repoName, userName, repo, root) {
+window.githubRepo = function(repoName, username, repo, root) {
 
 	var presenter = new renderCommits(root);
+	var sidebarPresenter = new renderSidebarRepos();
 
 	return {
 		render: function (){
@@ -10,7 +11,9 @@ window.githubRepo = function(repoName, userName, repo, root) {
 			}, 'json');
 		},
 		renderSidebarRepo: function(){
-
+			// console.log('render sidebar is running');
+			// render: sidebarPresenter.render(data);
+			sidebarPresenter.render(repoName, username);
 		}
 	};
 };
