@@ -23,7 +23,7 @@
               $root.append('<div class="individual-repo-wrap" data-reponame=""></div>');
               $root.children(".individual-repo-wrap").last().data('reponame', repoName);
 
-              for (var i = 0; i <= commits.length; i += 1) {
+              for (var i = 0; i < commits.length; i += 1) {
                 var currentdatetimeMinusTwo = new Date().minusHours(2);
                 var currentdatetimeMinusDay = new Date().minusHours(24);
                 var date = new Date(commits[i].commit['author']["date"]);
