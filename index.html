@@ -29,7 +29,7 @@
   </script>
 
   <script type="text/template"  class="repo">
-    <div class="repo">
+    <div class="repo-row">
         <strong>{ user }:</strong> { repo }
     </div>
   </script>
@@ -44,7 +44,6 @@
 <script src="js/vendor/riot.js"></script>
 <!-- Riot.js Models -->
 <script src="js/models/repos-json.js"></script>
-<script src="js/models/repos.js"></script>
 <script src="js/models/repo.js"></script>
 <!-- Riot.js Presenters -->
 <script src="js/presenters/repo-commits.js"></script>
@@ -52,7 +51,11 @@
 <!-- Main js -->
 <script type="text/javascript">
 	$(document).ready(function() {
-		// Loop through the repos
+
+		//// Loop through the repos from repos-json.js
+		//// or eventually from whatever is in that same object
+		//// in the sidebar at the time of the call to github firing
+		//// which can run on a long poll
 		for (var key in repos) {
 		   var obj = repos[key];
 		   var user, repo;
@@ -66,7 +69,7 @@
 		   }
 		   var repoUrl = "https://api.github.com/repos/" + user + "/" + repo + "/commits";
 		   // console.log('Link to repo: ', repoUrl);
-		   x = new githubRepo(repo, repoUrl, "#commit-messages-wrap");
+		   x = new githubRepo(repo, user, repoUrl, "#commit-messages-wrap");
 		   x.render();
 
 		   // RENDER a single repo in the SIDEBAR WILL GO HERE
@@ -77,8 +80,6 @@
 		var windowh = +$(document).height();
 		$('aside').css("height", windowh);
 		$(window).on('resize', function() {
-			windowheight = +$(document).height();
-			$('aside').css("height", windowheight);
 			windowh = +$(window).height() - 20;
 			$('aside').css("height", windowh);
 		});
