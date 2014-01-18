@@ -1,9 +1,21 @@
 // the riot presenter for each repo
 (function () {
 
-    window.renderCommits =function(root){
+    window.renderCommits =function(root) {
         var root = root;
         return {
+            createClass : function(date, currentdatetimeMinusTwo, currentdatetimeMinusDay) {
+                // add classes for how recent the commit was
+                var recent;
+                if ( date > currentdatetimeMinusTwo ) {
+                    recent = "recent";
+                } else if ( date > currentdatetimeMinusDay && date < currentdatetimeMinusTwo ) {
+                    recent = "past-day";
+                } else {
+                    recent = "";
+                }
+                return recent;
+            },
             render : function(repoName, commits) {
               var $root = $(root);
               var commitTemplate = $("#templates .commit").html();
@@ -15,16 +27,7 @@
                 var currentdatetimeMinusTwo = new Date().minusHours(2);
                 var currentdatetimeMinusDay = new Date().minusHours(24);
                 var date = new Date(commits[i].commit['author']["date"]);
-
-                // add classes for how recent the commit was
-                var recent;
-                if ( date > currentdatetimeMinusTwo ) {
-                    recent = "recent";
-                } else if ( date > currentdatetimeMinusDay && date < currentdatetimeMinusTwo ) {
-                    recent = "past-day";
-                } else {
-                    recent = "";
-                }
+                var recent = this.createClass(date, currentdatetimeMinusTwo, currentdatetimeMinusDay);
 
                 var commitStuffs = {
                     id: repoName,
@@ -40,6 +43,5 @@
             }
         };
     };
-
 
 })();
