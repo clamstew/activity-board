@@ -1,7 +1,7 @@
 * { font-family: sans-serif; }
 body { background: #f0f4f5; }
 h2, p { color: #1189d9; text-align: center; }
-footer { clear:both; }
+footer { clear:both; display: block; text-align: center; }
 #templates { display: none; }
 .commit-message {
 	border: 1px solid #ccc;
