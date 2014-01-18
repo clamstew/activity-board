@@ -2,14 +2,15 @@
 body { margin: 0; padding: 0; background: #f0f4f5; }
 h2, p { margin: 0 0 10px 0; color: #1189d9; text-align: center; }
 aside {
-	width: 300px;
-	left: 0;
-	top: 0;
-	bottom: 0;
 	background: white;
-	height: 100%;
-	float: left;
 	border-right: 1px solid #1189d9;
+	bottom: 0;
+	left: 0;
+	float: left;
+	height: 100%;
+	padding: 10px;
+	top: 0;
+	width: 200px;
 }
 footer { clear:both; display: block; text-align: center; }
 #templates { display: none; }
