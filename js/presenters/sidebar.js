@@ -63,7 +63,21 @@
 
       // add repo event listeners on sidebar
       $('aside .add-repo').on('click', function() {
-        alert(0);
+        alert('Adding this New Repo to the mix ....');
+        // $('#add-repo').val(); // this needs to go in the enter function
+        // for the type repo user name input
+
+        // still need to add the code here to hide and show the
+        // input username repo box
+      });
+
+      $('aside #add-repo').on('keypress', function(event) {
+          switch (event.which) {
+          case 13:
+            // ...
+            alert('you pressed enter!');
+            break;
+          }
       });
     });
 })();
