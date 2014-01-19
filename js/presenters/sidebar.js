@@ -1,5 +1,5 @@
-// the presenter for the sidebar
 (function () {
+// the presenter for the sidebar
     window.renderSidebarRepos = function() {
         return {
             render : function(repoName, username) {
@@ -62,32 +62,51 @@
 
       // add repo event listeners on sidebar
       $('aside .add-repo').on('click', function() {
-        alert('Adding this New Repo to the mix ....');
-        $('aside #add-repo').show();
-        // $('#add-repo').val(); // this needs to go in the enter function
-        // for the type repo user name input
-
-        // still need to add the code here to hide and show the
-        // input username repo box
+        if ($('.add-repo-input-wrap').hasClass('tuckedaway')) {
+          console.log('Showing the add repo input box ....');
+          $('.add-repo-input-wrap').show().addClass('readytogo').removeClass('tuckedaway');
+          $('aside .add-repo').html('<i class="fa fa-minus-circle"></i>');
+        } else {
+          console.log('Hiding the add repo input box ....');
+          $('.add-repo-input-wrap').hide().addClass('tuckedaway').removeClass('readytogo');
+          $('aside .add-repo').html('<i class="fa fa-plus-circle"></i>');
+        }
       });
 
+      // Listener for the enter key on the input repo box
+      // should run a script to add the new repo to the page
+      // maybe run create page again right after the new repo
+      // is added to the repos list json file
       $('aside #add-repo').on('keypress', function(event) {
-          switch (event.which) {
-          case 13:
-            var inputText = $(this).val();
-            var inputArray = inputText.split("/", 2);
-            // put validation if input array not formatted properly as array
-            // make sure it matches a reges for the patter "string/string"
-            // then break here
-            console.log('input array', inputArray);
-            var username = inputArray[0];
-            var repo = inputArray[1];
-            console.log('you pressed enter!');
-            var url = "https://api.github.com/repos/" + username + "/" + repo + "/commits";
-            console.log('your url', url);
-            $(this).val(''); // clear the input
-            break;
-          }
+        switch (event.which) {
+        case 13:
+          var inputText = $(this).val();
+          var inputArray = inputText.split("/", 2);
+          // put validation if input array not formatted properly as array
+          // make sure it matches a reges for the patter "string/string"
+          // then break here
+          console.log('input array', inputArray);
+          var username = inputArray[0];
+          var repo = inputArray[1];
+          console.log('you pressed enter!');
+          var url = "https://api.github.com/repos/" + username + "/" + repo + "/commits";
+          console.log('your url', url);
+          $(this).val(''); // clear the input
+          break;
+        }
       });
-    });
+
+      // cool effect on the sidebar icons on hover over the repo names
+      // so before you click it has an arrow showing you you are about to
+      // go to a new page
+      $('aside').on('mouseover', '.repo-row', function(){
+        $(this).children('i').remove();
+        $(this).prepend('<i class="fa fa-chevron-circle-right"></i>');
+      }).on('mouseout', '.repo-row', function(){
+        $(this).children('i').remove();
+        $(this).prepend('<i class="fa fa-github"></i> ');
+      });
+
+    }); // end of $(document).ready();
+
 })();
