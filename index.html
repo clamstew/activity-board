@@ -14,6 +14,8 @@
 </aside>
 
 <div id="main-layout-wrap">
+	<!-- Aside Opener -->
+	<div class="aside-open">>></div>
 	<!-- Main Layout -->
 	<h2>MakerSquare Final Projects</h2>
 	<p>See the Final Projects Comming Together in Real Time <sup>*</sup></p>
@@ -83,6 +85,21 @@
 		$(window).on('resize', function() {
 			windowh = +$(window).height() - 20;
 			$('aside').css("height", windowh);
+		});
+
+		// hide and close the sidebar
+		$('aside .close').on('click', function(event) {
+			event.preventDefault();
+			console.log('close clicked');
+			$('aside').hide();
+			$('.aside-open').show();
+		});
+
+		$('.aside-open').on('click', function(event) {
+			event.preventDefault();
+			console.log('open sidebar clicked');
+			$('.aside-open').hide();
+			$('aside').show();
 		});
 	});
 </script>

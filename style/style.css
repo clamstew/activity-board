@@ -18,6 +18,21 @@ aside {
 		top: 0;
 		right: 0;
 		float: right;
+		cursor: pointer;
+	}
+	.aside-open {
+		position: absolute;
+		top: 0;
+		left: 0;
+		border: 1px solid black;
+		/*add a display: none; for when the sidebar is showing to jQuery toggle*/
+		display: none;
+		cursor: pointer;
+		width: 20px;
+		height: 20px;
+		color: white;
+		background: black;
+		z-index: 100;
 	}
 	.repo-row a {
 		font-size: 10px;
