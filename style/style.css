@@ -30,12 +30,18 @@ aside {
 		right: 0;
 		top: 0;
 	}
+	aside .close:hover {
+		color: #1189d9;
+	}
 	aside .add-repo {
 		position: relative;
 		top: 0;
 		right: 0;
 		float: right;
 		cursor: pointer;
+	}
+	aside .add-repo:hover {
+		color: green;
 	}
 	aside input[type="text"]#add-repo {
 		border: 1px solid black;
