@@ -16,4 +16,4 @@ While initially intended for monitoring the final projects of [@makersquare](htt
 
 **Demo**
 
-<a href="http://clamstew.github.io/activity-board" class="button">Demo Site</a>
+<a href="http://clamstew.github.io/activity-board" class="minibutton sidebar-button">Demo Site</a>
