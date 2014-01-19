@@ -1,33 +1,78 @@
 * { font-family: sans-serif; }
-body { background: #f0f4f5; }
-h2, p { color: #1189d9; text-align: center; }
+body { margin: 0; padding: 0; background: #f0f4f5; }
+h2, p { margin: 0 0 10px 0; color: #1189d9; text-align: center; }
+h3 { margin: 9px; margin-left: 0; }
+aside {
+	background: white;
+	border-right: 1px solid #1189d9;
+	bottom: 0;
+	left: 0;
+	float: left;
+	height: 100%;
+	padding: 10px;
+	top: 0;
+	width: 200px;
+}
+	aside .close {
+		position: relative;
+		top: 0;
+		right: 0;
+		float: right;
+		cursor: pointer;
+	}
+	.aside-open {
+		background: #1189d9;
+		-webkit-border-radius: 0 0 10px 0;
+		border-radius: 0 0 10px 0;
+		color: white;
+		cursor: pointer;
+		display: none;
+		left: 0;
+		height: 20px;
+		padding: 4px 0 2px 6px;
+		top: 0;
+		position: absolute;
+		width: 20px;
+		z-index: 100;
+	}
+	.repo-row a {
+		color: black;
+		font-size: 10px;
+		text-decoration: none;
+	}
+	.repo-row a:hover { text-decoration: underline; }
 footer { clear:both; display: block; text-align: center; }
 #templates { display: none; }
-.commit-message {
-	border: 1px solid #ccc;
-	padding: 5px;
-	width: 188px;
-}
-.commit-message a {
-	text-decoration: none;
-	color: inherit;
-}
-.commit-message a:hover {
-	text-decoration: underline;
-}
-.recent { color: green; }
-.past-day { color: orange;}
 
-.individual-repo-wrap {
-	width: 200px;
-	height: 200px;
-	overflow-y: scroll;
-	overflow-x: hidden;
-	border: 2px solid #1189d9;
-	float: left;
-	margin: 0 0 10px 10px;
-	background: #fff;
+#main-layout-wrap {
+	padding: 15px 0 0 0;
 }
-.individual-repo-wrap:after {
-	clear: both;
-}
+	/*#main-layout-wrap:before { clear: both; }*/
+	.commit-message {
+		border: 1px solid #ccc;
+		padding: 5px;
+		width: 188px;
+	}
+	.commit-message a {
+		text-decoration: none;
+		color: inherit;
+	}
+	.commit-message a:hover {
+		text-decoration: underline;
+	}
+	.recent { color: green; }
+	.past-day { color: orange;}
+
+	.individual-repo-wrap {
+		width: 200px;
+		height: 200px;
+		overflow-y: scroll;
+		overflow-x: hidden;
+		border: 2px solid #1189d9;
+		float: left;
+		margin: 0 0 10px 10px;
+		background: #fff;
+	}
+	.individual-repo-wrap:after {
+		clear: both;
+	}
