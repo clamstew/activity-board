@@ -95,6 +95,9 @@
           createPage();
           $(this).val(''); // clear the input
           break;
+        case 191:
+          return "/";
+          // break;
         }
       });
 

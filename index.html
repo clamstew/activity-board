@@ -116,6 +116,14 @@
 		  }
 		  console.log('page refresh pause or play toggled', window.pausePageRefresh);
 		});
+
+		// global keypress handlers
+		$(document).bind('keyup', function (evt) {
+          // basic help event
+          if (evt.keyCode == 191 && $('#add-repo').is(":focus") === false) {
+            alert("COLOR KEY:\nGreen = Past 2 Hours\nOrange = Past Day\nBlack = Older");
+          }
+      	});
 	});
 </script>
 
