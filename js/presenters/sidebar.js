@@ -64,6 +64,7 @@
       // add repo event listeners on sidebar
       $('aside .add-repo').on('click', function() {
         alert('Adding this New Repo to the mix ....');
+        $('aside #add-repo').show();
         // $('#add-repo').val(); // this needs to go in the enter function
         // for the type repo user name input
 
