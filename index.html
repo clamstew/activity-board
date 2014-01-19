@@ -9,6 +9,7 @@
 </head>
 <body>
 
+<!-- The sidebar html - hidden by default -->
 <aside style="display:none;">
 	<div class="close"><i class="fa fa-arrow-circle-left"></i></div>
 	<div class="add-repo"><i class="fa fa-plus-circle"></i></div>
@@ -16,6 +17,7 @@
 	<div><input type="text" id="add-repo" placeholder='Type "Username/Repo"' /></div>
 </aside>
 
+<!-- The main stage to see the commit activity -->
 <div id="main-layout-wrap">
 	<!-- Aside Opener -->
 	<div class="aside-open"><i class="fa fa-arrow-circle-right"></i></div>
@@ -74,11 +76,14 @@
 		      }
 		   }
 		   var repoUrl = "https://api.github.com/repos/" + user + "/" + repo + "/commits";
-		   // console.log('Link to repo: ', repoUrl);
+
+		   // MAKE a new instance of a github repo
 		   x = new githubRepo(repo, user, repoUrl, "#commit-messages-wrap");
+
+		   // RENDER a box of this repos commits to the main section of the page
 		   x.render();
 
-		   // RENDER a single repo in the SIDEBAR WILL GO HERE
+		   // RENDER a single repo in the SIDEBAR
 		   x.renderSidebarRepo();
 		}
 	});
