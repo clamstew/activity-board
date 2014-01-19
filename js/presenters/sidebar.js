@@ -80,9 +80,11 @@
             // make sure it matches a reges for the patter "string/string"
             // then break here
             console.log('input array', inputArray);
-            var username;
-            var repo;
+            var username = inputArray[0];
+            var repo = inputArray[1];
             console.log('you pressed enter!');
+            var url = "https://api.github.com/repos/" + username + "/" + repo + "/commits";
+            console.log('your url', url);
             $(this).val(''); // clear the input
             break;
           }
