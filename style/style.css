@@ -68,6 +68,9 @@ aside {
 		width: 20px;
 		z-index: 100;
 	}
+	.aside-open:hover {
+		background: black;
+	}
 	.repo-row a {
 		color: black;
 		font-size: 10px;
