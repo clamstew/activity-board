@@ -35,4 +35,35 @@
             }
         };
     };
+
+    // SIDEBAR EVENT LISTENTERS
+    $(document).ready(function() {
+      // adjust the height of the sidebar
+      var windowh = +$(document).height();
+      $('aside').css("height", windowh);
+      $(window).on('resize', function() {
+        windowh = +$(window).height() - 20;
+        $('aside').css("height", windowh);
+      });
+
+      // hide and close the sidebar
+      $('aside .close').on('click', function(event) {
+        event.preventDefault();
+        console.log('close clicked');
+        $('aside').hide();
+        $('.aside-open').show();
+      });
+
+      $('.aside-open').on('click', function(event) {
+        event.preventDefault();
+        console.log('open sidebar clicked');
+        $('.aside-open').hide();
+        $('aside').show();
+      });
+
+      // add repo event listeners on sidebar
+      $('aside .add-repo').on('click', function() {
+        alert(0);
+      });
+    });
 })();
