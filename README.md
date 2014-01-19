@@ -16,13 +16,10 @@ While initially intended for monitoring the final projects of [@makersquare](htt
 
 **Demo**
 
-<a href="http://clamstew.github.io/activity-board" class="minibutton sidebar-button">Demo Site</a>
+<a href="http://clamstew.github.io/activity-board">Demo Site</a>
 
 ---
 
 **Fork Me**
-
-<iframe src="http://ghbtns.com/github-btn.html?user=mdo&repo=github-buttons&type=fork"
-  allowtransparency="true" frameborder="0" scrolling="0" width="53" height="20"></iframe>
 
 And contribute to the project and send me a pull request if you want.  I'm open to making this a cool tool.
