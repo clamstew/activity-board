@@ -72,6 +72,9 @@ footer { clear:both; display: block; text-align: center; }
 	.commit-message a:hover {
 		text-decoration: underline;
 	}
+	.commit-message small {
+		color: #ccc;
+	}
 	.recent { color: green; }
 	.past-day { color: orange;}
 
