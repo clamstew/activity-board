@@ -68,7 +68,9 @@
 			// clear the sidebar area
         	$(".sidebar-repo-wrap").remove();
         	// clear the main page commit boxes
-        	$(".individual-repo-wrap").remove();
+        	$(".individual-repo-wrap").fadeOut('fast', function() {
+        		$(this).remove();
+        	});
         	// start looping through the repos json
 			for (var key in repos) {
 			   var obj = repos[key];
@@ -95,11 +97,11 @@
 			}
 		};
 		createPage();
-		// run the create page function every 30 seconds
+		// run the create page function every 30 seconds => 30000
 		setInterval(function(){
 			createPage();
 			// console.log('ran create page function on interval');
-		},30000);
+		},5000);
 	});
 </script>
 
