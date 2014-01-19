@@ -48,14 +48,14 @@
       // hide and close the sidebar
       $('aside .close').on('click', function(event) {
         event.preventDefault();
-        console.log('close clicked');
+        // console.log('close clicked');
         $('aside').hide();
         $('.aside-open').show();
       });
 
       $('.aside-open').on('click', function(event) {
         event.preventDefault();
-        console.log('open sidebar clicked');
+        // console.log('open sidebar clicked');
         $('.aside-open').hide();
         $('aside').show();
       });
@@ -85,12 +85,12 @@
           // put validation if input array not formatted properly as array
           // make sure it matches a reges for the patter "string/string"
           // then break here
-          console.log('input array', inputArray);
+          // console.log('input array', inputArray);
           var username = inputArray[0];
           var repo = inputArray[1];
-          console.log('you pressed enter!');
+          // console.log('you pressed enter!');
           var url = "https://api.github.com/repos/" + username + "/" + repo + "/commits";
-          console.log('your url', url);
+          // console.log('your url', url);
           window.repos.push({ user: username , repo: repo });
           createPage();
           $(this).val(''); // clear the input
