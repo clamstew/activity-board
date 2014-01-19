@@ -21,22 +21,23 @@ aside {
 		cursor: pointer;
 	}
 	.aside-open {
-		position: absolute;
-		top: 0;
-		left: 0;
-		border: 1px solid black;
-		/*add a display: none; for when the sidebar is showing to jQuery toggle*/
-		display: none;
-		cursor: pointer;
-		width: 20px;
-		height: 20px;
+		background: #1189d9;
+		-webkit-border-radius: 0 0 10px 0;
+		border-radius: 0 0 10px 0;
 		color: white;
-		background: black;
+		cursor: pointer;
+		display: none;
+		left: 0;
+		height: 20px;
+		padding: 4px 0 2px 6px;
+		top: 0;
+		position: absolute;
+		width: 20px;
 		z-index: 100;
 	}
 	.repo-row a {
-		font-size: 10px;
 		color: black;
+		font-size: 10px;
 		text-decoration: none;
 	}
 	.repo-row a:hover { text-decoration: underline; }
