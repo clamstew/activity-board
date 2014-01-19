@@ -64,28 +64,42 @@
 		//// or eventually from whatever is in that same object
 		//// in the sidebar at the time of the call to github firing
 		//// which can run on a long poll
-		for (var key in repos) {
-		   var obj = repos[key];
-		   var user, repo;
-		   for (var prop in obj) {
-		      // important check that this is objects own property
-		      // not from prototype prop inherited
-		      if(obj.hasOwnProperty(prop)){
-		      	if (prop === "user") { user = obj[prop] }
-		      	if (prop === "repo") { repo = obj[prop] }
-		      }
-		   }
-		   var repoUrl = "https://api.github.com/repos/" + user + "/" + repo + "/commits";
+		window.createPage = function() {
+			// clear the sidebar area
+        	$(".sidebar-repo-wrap").remove();
+        	// clear the main page commit boxes
+        	$(".individual-repo-wrap").remove();
+        	// start looping through the repos json
+			for (var key in repos) {
+			   var obj = repos[key];
+			   var user, repo;
+			   for (var prop in obj) {
+			      // important check that this is objects own property
+			      // not from prototype prop inherited
+			      if(obj.hasOwnProperty(prop)){
+			      	if (prop === "user") { user = obj[prop] }
+			      	if (prop === "repo") { repo = obj[prop] }
+			      }
+			   }
+			   // create url for repo $.get call
+			   var repoUrl = "https://api.github.com/repos/" + user + "/" + repo + "/commits";
 
-		   // MAKE a new instance of a github repo
-		   x = new githubRepo(repo, user, repoUrl, "#commit-messages-wrap");
+			   // MAKE a new instance of a github repo
+			   x = new githubRepo(repo, user, repoUrl, "#commit-messages-wrap");
 
-		   // RENDER a box of this repos commits to the main section of the page
-		   x.render();
+			   // RENDER a box of this repos commits to the main section of the page
+			   x.render();
 
-		   // RENDER a single repo in the SIDEBAR
-		   x.renderSidebarRepo();
-		}
+			   // RENDER a single repo in the SIDEBAR
+			   x.renderSidebarRepo();
+			}
+		};
+		createPage();
+		// run the create page function every 30 seconds
+		setInterval(function(){
+			createPage();
+			// console.log('ran create page function on interval');
+		},30000);
 	});
 </script>
 
