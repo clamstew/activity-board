@@ -77,6 +77,7 @@
           case 13:
             // ...
             alert('you pressed enter!');
+            $(this).val(''); // clear the input
             break;
           }
       });
