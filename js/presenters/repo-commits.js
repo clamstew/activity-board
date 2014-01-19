@@ -22,6 +22,7 @@
 
               $root.append('<div class="individual-repo-wrap" data-reponame=""></div>');
               $root.children(".individual-repo-wrap").last().data('reponame', repoName);
+              $root.children(".individual-repo-wrap").last().prepend("<div class='title'> / "+repoName+"</div>");
 
               for (var i = 0; i < commits.length; i += 1) {
                 var currentdatetimeMinusTwo = new Date().minusHours(2);

@@ -133,3 +133,9 @@ footer { clear:both; display: block; text-align: center; }
 	.individual-repo-wrap:after {
 		clear: both;
 	}
+	.individual-repo-wrap .title {
+		background: #1189d9;
+		font-weight: bold;
+		color: white;
+		text-align: center;
+	}
