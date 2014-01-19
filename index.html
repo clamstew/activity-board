@@ -64,9 +64,9 @@
 	$(document).ready(function() {
 
 		//// Loop through the repos from repos-json.js
-		//// or eventually from whatever is in that same object
-		//// in the sidebar at the time of the call to github firing
-		//// which can run on a long poll
+		// and crete this page
+		// also used on a 30 second interval when live is on
+		// and when the data model is updated
 		window.createPage = function() {
 			// clear the sidebar area
         	$(".sidebar-repo-wrap").remove();
