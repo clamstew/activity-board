@@ -1,13 +1,12 @@
 // the presenter for the sidebar
 (function () {
     window.renderSidebarRepos = function() {
-
         return {
             render : function(repoName, username) {
               var $root = $('aside');
               // console.log('current root', $root);
               var formattedRepo = username + " / " + repoName;
-              console.log('repo formated', formattedRepo);
+              // console.log('repo formated', formattedRepo);
               // var $root = $('aside');
               var repoTemplate = $("#templates .repo").html();
 
@@ -22,7 +21,7 @@
                 repolink: this.makeRepoLink(repoName, username),
               };
               var repoHtml = $.render(repoTemplate, repoStuffs);
-              console.log('this repo url', repoHtml);
+              // console.log('this repo url', repoHtml);
               $root.children(".sidebar-repo-wrap").last().append(repoHtml);
             },
             makeUserLink : function(username) {
@@ -75,8 +74,15 @@
       $('aside #add-repo').on('keypress', function(event) {
           switch (event.which) {
           case 13:
-            // ...
-            alert('you pressed enter!');
+            var inputText = $(this).val();
+            var inputArray = inputText.split("/", 2);
+            // put validation if input array not formatted properly as array
+            // make sure it matches a reges for the patter "string/string"
+            // then break here
+            console.log('input array', inputArray);
+            var username;
+            var repo;
+            console.log('you pressed enter!');
             $(this).val(''); // clear the input
             break;
           }
