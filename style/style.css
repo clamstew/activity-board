@@ -41,6 +41,9 @@ aside {
 		text-decoration: none;
 	}
 	.repo-row a:hover { text-decoration: underline; }
+	.repo-row i {
+		font-size: 12px;
+	}
 footer { clear:both; display: block; text-align: center; }
 #templates { display: none; }
 
