@@ -10,7 +10,7 @@ While initially intended for monitoring the final projects of [@makersquare](htt
 
 **Here is an screenshot**
 
-<img src="screenshot.png" width="600px" />
+<img src="images/screenshot.png" width="600px" />
 
 ---
 
