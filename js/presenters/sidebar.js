@@ -91,6 +91,8 @@
           console.log('you pressed enter!');
           var url = "https://api.github.com/repos/" + username + "/" + repo + "/commits";
           console.log('your url', url);
+          window.repos.push({ user: username , repo: repo });
+          createPage();
           $(this).val(''); // clear the input
           break;
         }
