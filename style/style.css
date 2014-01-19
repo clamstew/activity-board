@@ -1,5 +1,13 @@
 * { font-family: sans-serif; }
 body { margin: 0; padding: 0; background: #f0f4f5; }
+/* remove webkit highlighting from form elements */
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+/* style general html elements */
 h2, p { margin: 0 0 10px 0; color: #1189d9; text-align: center; }
 h3 { margin: 9px; margin-left: 0; }
 aside {
@@ -35,6 +43,10 @@ aside {
 		border-right: 1px solid white;
 		border-left: 1px solid white;
 		margin-bottom: 10px;
+		font-size: 16px;
+		font-weight: 500;
+		padding: 5px 0;
+		width: 180px;
 	}
 	.aside-open {
 		background: #1189d9;
