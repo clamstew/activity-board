@@ -99,6 +99,8 @@
           return "/";
           // break;
         }
+      }).on('blur', function() {
+        $(this).val('');
       });
 
       // cool effect on the sidebar icons on hover over the repo names
