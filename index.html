@@ -9,7 +9,8 @@
 <body>
 
 <aside>
-	the sidebars for the repos ...
+	<div class="close">(X)</div>
+	<h3>Repositories:</h3>
 </aside>
 
 <div id="main-layout-wrap">
@@ -28,9 +29,9 @@
     </div>
   </script>
 
-  <script type="text/template"  class="repo">
+  <script type="text/template" class="repo">
     <div class="repo-row">
-        <strong>{ user }:</strong> { repo }
+        &bull; <a href="{ repolink }" target="_blank"><strong>{ user } / { repo }</strong></a>
     </div>
   </script>
 </div>

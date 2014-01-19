@@ -14,18 +14,16 @@
               $root.append('<div class="sidebar-repo-wrap" data-reponame=""></div>');
               $root.children(".sidebar-repo-wrap").last().data('reponame', repoName);
 
-              // for (var i = 0; i < commits.length; i += 1) {
-                var repoStuffs = {
-                    id: repoName,
-                    repo: this.makeUserLink(username),
-                    user: username,
-                    userlink: this.makeRepoLink(repoName, username),
-                };
-                var repoHtml = $.render(repoTemplate, repoStuffs);
-                console.log('this repo url', repoHtml);
-                $root.children(".sidebar-repo-wrap").last().append(repoHtml);
-                console.log('this ran!!');
-              // }
+              var repoStuffs = {
+                id: repoName,
+                repo: repoName,
+                userLink: this.makeUserLink(username),
+                user: username,
+                repolink: this.makeRepoLink(repoName, username),
+              };
+              var repoHtml = $.render(repoTemplate, repoStuffs);
+              console.log('this repo url', repoHtml);
+              $root.children(".sidebar-repo-wrap").last().append(repoHtml);
             },
             makeUserLink : function(username) {
                 var link = "http://github.com/" + username;

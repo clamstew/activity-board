@@ -1,6 +1,7 @@
 * { font-family: sans-serif; }
 body { margin: 0; padding: 0; background: #f0f4f5; }
 h2, p { margin: 0 0 10px 0; color: #1189d9; text-align: center; }
+h3 { margin: 9px; margin-left: 0; }
 aside {
 	background: white;
 	border-right: 1px solid #1189d9;
@@ -12,38 +13,50 @@ aside {
 	top: 0;
 	width: 200px;
 }
+	aside .close {
+		position: relative;
+		top: 0;
+		right: 0;
+		float: right;
+	}
+	.repo-row a {
+		font-size: 10px;
+		color: black;
+		text-decoration: none;
+	}
+	.repo-row a:hover { text-decoration: underline; }
 footer { clear:both; display: block; text-align: center; }
 #templates { display: none; }
 
 #main-layout-wrap {
 	padding: 15px 0 0 0;
 }
-/*#main-layout-wrap:before { clear: both; }*/
-.commit-message {
-	border: 1px solid #ccc;
-	padding: 5px;
-	width: 188px;
-}
-.commit-message a {
-	text-decoration: none;
-	color: inherit;
-}
-.commit-message a:hover {
-	text-decoration: underline;
-}
-.recent { color: green; }
-.past-day { color: orange;}
+	/*#main-layout-wrap:before { clear: both; }*/
+	.commit-message {
+		border: 1px solid #ccc;
+		padding: 5px;
+		width: 188px;
+	}
+	.commit-message a {
+		text-decoration: none;
+		color: inherit;
+	}
+	.commit-message a:hover {
+		text-decoration: underline;
+	}
+	.recent { color: green; }
+	.past-day { color: orange;}
 
-.individual-repo-wrap {
-	width: 200px;
-	height: 200px;
-	overflow-y: scroll;
-	overflow-x: hidden;
-	border: 2px solid #1189d9;
-	float: left;
-	margin: 0 0 10px 10px;
-	background: #fff;
-}
-.individual-repo-wrap:after {
-	clear: both;
-}
+	.individual-repo-wrap {
+		width: 200px;
+		height: 200px;
+		overflow-y: scroll;
+		overflow-x: hidden;
+		border: 2px solid #1189d9;
+		float: left;
+		margin: 0 0 10px 10px;
+		background: #fff;
+	}
+	.individual-repo-wrap:after {
+		clear: both;
+	}
