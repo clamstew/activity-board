@@ -51,6 +51,12 @@ aside {
 	aside .add-repo:hover {
 		color: green;
 	}
+	aside .add-repo i.fa.fa-plus-circle:hover {
+		color: green;
+	}
+	aside .add-repo i.fa.fa-minus-circle:hover {
+		color: red;
+	}
 	aside input[type="text"]#add-repo {
 		border: 1px solid black;
 		border-top: 1px solid white;
