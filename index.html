@@ -23,7 +23,7 @@
 	<div class="aside-open"><i class="fa fa-arrow-circle-right"></i></div>
 	<!-- Main Layout -->
 	<h2>MakerSquare Final Projects</h2>
-	<p>See the Final Projects Comming Together in Real Time <sup>*</sup></p>
+	<p>See the Final Projects Coming Together in Real Time <span class="pause-page-refresh"><i class="fa fa-play"></i></span></p>
 	<div id="commit-messages-wrap"></div>
 </div>
 
@@ -97,11 +97,31 @@
 			}
 		};
 		createPage();
+		// set page to not refresh by default
+		window.pausePageRefresh = true;
 		// run the create page function every 30 seconds => 30000
 		setInterval(function(){
+			if (window.pausePageRefresh === true) {
+			  return;
+			}
 			createPage();
 			// console.log('ran create page function on interval');
 		},30000);
+
+		// Page Behavior event listeners:
+		$(".pause-page-refresh").on("click", function() {
+		  if (window.pausePageRefresh === false) {
+		    window.pausePageRefresh = true;
+		    // toggle icon to play button
+		    $(this).html('<i class="fa fa-play"></i>');
+		  } else {
+		    window.pausePageRefresh = false;
+		    // toggle icon back to a pause button
+		    $(this).html('<i class="fa fa-pause"></i>');
+		  }
+		  console.log('page refresh pause or play toggled', window.pausePageRefresh);
+		});
+
 	});
 </script>
 
