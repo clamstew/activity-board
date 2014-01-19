@@ -122,6 +122,16 @@
 		  console.log('page refresh pause or play toggled', window.pausePageRefresh);
 		});
 
+		// cool effect on the sidebar icons on hover over the repo names
+		// so before you click it has an arrow showing you you are about to
+		// go to a new page
+		$('aside').on('mouseover', '.repo-row', function(){
+			$(this).children('i').remove();
+			$(this).prepend('<i class="fa fa-chevron-circle-right"></i>');
+		}).on('mouseout', '.repo-row', function(){
+			$(this).children('i').remove();
+			$(this).prepend('<i class="fa fa-github"></i> ');
+		});
 	});
 </script>
 
