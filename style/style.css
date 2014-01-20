@@ -130,7 +130,7 @@ footer { clear:both; display: block; text-align: center; }
 		margin: 0 0 10px 10px;
 		background: #fff;
 		/* to get it to float: */
-		padding-top: 10px;
+		padding-top: 25px;
 	}
 	.individual-repo-wrap:after {
 		clear: both;
@@ -143,5 +143,6 @@ footer { clear:both; display: block; text-align: center; }
 		/* to get it to float: */
 		position: fixed;
 		width: 200px;
-		margin-top: -10px;
+		margin-top: -25px;
+		padding: 5px 0;
 	}
