@@ -16,13 +16,13 @@
                 }
                 return recent;
             },
-            render : function(repoName, commits) {
+            render : function(repoName, commits, username) {
               var $root = $(root);
               var commitTemplate = $("#templates .commit").html();
 
               $root.append('<div class="individual-repo-wrap" data-reponame=""></div>');
               $root.children(".individual-repo-wrap").last().data('reponame', repoName);
-              $root.children(".individual-repo-wrap").last().prepend("<div class='title'> / "+repoName+"</div>");
+              $root.children(".individual-repo-wrap").last().prepend("<div class='title'><a target='_blank' href='http://github.com/"+username+"/"+repoName+"'> / "+repoName+"</a></div>");
 
               for (var i = 0; i < commits.length; i += 1) {
                 var currentdatetimeMinusTwo = new Date().minusHours(2);
@@ -30,7 +30,8 @@
                 var date = new Date(commits[i].commit['author']["date"]);
                 var recent = this.createClass(date, currentdatetimeMinusTwo, currentdatetimeMinusDay);
 
-                // console.log('what doesnt work', commits[i].author["login"]);
+                // error handling since sometimes
+                // commits[i].author comes back null
                 var ghUsername, ghUsernameLink;
                 if (commits[i].author === null) {
                     ghUsername = commits[i].commit.author.name;
@@ -46,7 +47,7 @@
                     user: ghUsername,
                     userlink: ghUsernameLink,
                     link: commits[i].html_url,
-                    date: date.toLocaleDateString() + " - " + date.toLocaleTimeString(),
+                    date: date.toLocaleDateString() + " | " + date.toLocaleTimeString(),
                     recent: recent
                 };
 

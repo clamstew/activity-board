@@ -146,6 +146,13 @@ footer { clear:both; display: block; text-align: center; }
 		margin-top: -25px;
 		padding: 5px 0;
 	}
+	.individual-repo-wrap .title a {
+		text-decoration: none;
+		color: white;
+	}
+	.individual-repo-wrap .title a:hover {
+		text-decoration: underline;
+	}
 
 /* ==== MEDIA QUERIES ==== */
 @media all and (max-width: 40em) {

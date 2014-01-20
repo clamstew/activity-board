@@ -6,7 +6,7 @@ window.githubRepo = function(repoName, username, repo, root) {
 	return {
 		render: function (){
 			render: $.get(repo, function(data) {
-				presenter.render(repoName, data);
+				presenter.render(repoName, data, username);
 			}, 'json');
 		},
 		renderSidebarRepo: function(){
