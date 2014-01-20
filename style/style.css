@@ -141,8 +141,15 @@ footer { clear:both; display: block; text-align: center; }
 		color: white;
 		text-align: center;
 		/* to get it to float: */
-		position: fixed;
+		position: absolute;
 		width: 200px;
 		margin-top: -25px;
 		padding: 5px 0;
 	}
+
+/* ==== MEDIA QUERIES ==== */
+@media all and (max-width: 40em) {
+	#fork-me-banner {
+		display: none;
+	}
+}
