@@ -63,11 +63,11 @@
       // add repo event listeners on sidebar
       $('aside .add-repo').on('click', function() {
         if ($('.add-repo-input-wrap').hasClass('tuckedaway')) {
-          console.log('Showing the add repo input box ....');
+          // Showing the add repo input box ...
           $('.add-repo-input-wrap').show().addClass('readytogo').removeClass('tuckedaway');
           $('aside .add-repo').html('<i class="fa fa-minus-circle"></i>');
         } else {
-          console.log('Hiding the add repo input box ....');
+          // Hiding the add repo input box ...
           $('.add-repo-input-wrap').hide().addClass('tuckedaway').removeClass('readytogo');
           $('aside .add-repo').html('<i class="fa fa-plus-circle"></i>');
         }

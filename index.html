@@ -79,16 +79,12 @@
 
 			for (var i = 0; i < repos.length; i += 1) {
 				var user = repos[i]['user'], repo = repos[i]['repo'];
-				console.log('This repo: ', user + repo);
-
 			    // create url for repo $.get call
 		        var repoUrl = "https://api.github.com/repos/" + user + "/" + repo + "/commits";
 		        // MAKE a new instance of a github repo
 			    x = new githubRepo(repo, user, repoUrl, "#commit-messages-wrap");
-
 			    // RENDER a box of this repos commits to the main section of the page
 			    x.render();
-
 			    // RENDER a single repo in the SIDEBAR
 			    x.renderSidebarRepo();
 			}
@@ -116,7 +112,7 @@
 		    // toggle icon back to a pause button
 		    $(this).html('<i class="fa fa-pause"></i>');
 		  }
-		  console.log('page refresh pause or play toggled', window.pausePageRefresh);
+		  // console.log('page refresh pause or play toggled', window.pausePageRefresh);
 		});
 
 		// global keypress handlers

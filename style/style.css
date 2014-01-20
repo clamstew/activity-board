@@ -121,16 +121,16 @@ footer { clear:both; display: block; text-align: center; }
 	.past-day { color: orange;}
 
 	.individual-repo-wrap {
-		width: 200px;
-		height: 200px;
-		overflow-y: scroll;
-		overflow-x: hidden;
+		background: #fff;
 		border: 2px solid #1189d9;
 		float: left;
+		height: 200px;
 		margin: 0 0 10px 10px;
-		background: #fff;
+		overflow-x: hidden;
+		overflow-y: scroll;
 		/* to get it to float: */
 		padding-top: 25px;
+		width: 200px;
 	}
 	.individual-repo-wrap:after {
 		clear: both;
