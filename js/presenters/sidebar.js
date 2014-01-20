@@ -82,22 +82,18 @@
         case 13:
           var inputText = $(this).val();
           var inputArray = inputText.split("/", 2);
-          // put validation if input array not formatted properly as array
+          // put REGEX validation if input array not formatted properly as array
           // make sure it matches a reges for the patter "string/string"
           // then break here
-          // console.log('input array', inputArray);
           var username = inputArray[0];
           var repo = inputArray[1];
-          // console.log('you pressed enter!');
           var url = "https://api.github.com/repos/" + username + "/" + repo + "/commits";
-          // console.log('your url', url);
           window.repos.push({ user: username , repo: repo });
           createPage();
           $(this).val(''); // clear the input
           break;
         case 191:
           return "/";
-          // break;
         }
       }).on('blur', function() {
         $(this).val('');

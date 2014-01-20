@@ -30,15 +30,27 @@
                 var date = new Date(commits[i].commit['author']["date"]);
                 var recent = this.createClass(date, currentdatetimeMinusTwo, currentdatetimeMinusDay);
 
+                // console.log('what doesnt work', commits[i].author["login"]);
+                var ghUsername, ghUsernameLink;
+                if (commits[i].author === null) {
+                    ghUsername = commits[i].commit.author.name;
+                    ghUsernameLink = 'http://github.com';
+                } else {
+                    ghUsername = commits[i].author["login"];
+                    ghUsernameLink = commits[i].author["html_url"];
+                }
+
                 var commitStuffs = {
                     id: repoName,
                     message: commits[i].commit["message"],
-                    user: commits[i].author["login"],
-                    userlink: commits[i].author["html_url"],
+                    user: ghUsername,
+                    userlink: ghUsernameLink,
                     link: commits[i].html_url,
                     date: date.toLocaleDateString() + " - " + date.toLocaleTimeString(),
                     recent: recent
                 };
+
+
 
                 var commitHtml = $.render(commitTemplate, commitStuffs);
                 $root.children(".individual-repo-wrap").last().append(commitHtml);
