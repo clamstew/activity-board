@@ -50,8 +50,6 @@
                     recent: recent
                 };
 
-
-
                 var commitHtml = $.render(commitTemplate, commitStuffs);
                 $root.children(".individual-repo-wrap").last().append(commitHtml);
               }
