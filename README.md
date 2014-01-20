@@ -14,12 +14,24 @@ While initially intended for monitoring the final projects of [@makersquare](htt
 
 ---
 
-**Demo**
+**Production site**
 
-<a href="http://clamstew.github.io/activity-board">Demo Site</a>
+<a href="http://www.alwaysbecommitting.com/" target="_blank">alwaysbecommitting.com</a>
+
+---
+
+**Development Site**
+
+<a href="http://clamstew.github.io/activity-board" target="_blank">Development Site on gh-pages</a>
 
 ---
 
 **Fork Me**
 
 And contribute to the project and send me a pull request if you want.  I'm open to making this a cool tool.
+
+---
+
+Roadmap:
+
+After I whittle down the issue. I'd like to rewrite it in backbone.
