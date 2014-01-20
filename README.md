@@ -16,7 +16,7 @@ While initially intended for monitoring the final projects of [@makersquare](htt
 
 **Production site**
 
-<a href="http://www.alwaysbecommitting.com/" target="_blank">alwaysbecommitting.com</a>
+<a href="http://www.alwaysbecommitting.com/" target="_blank">www.alwaysbecommitting.com</a>
 
 ---
 

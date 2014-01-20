@@ -129,6 +129,8 @@ footer { clear:both; display: block; text-align: center; }
 		float: left;
 		margin: 0 0 10px 10px;
 		background: #fff;
+		/* to get it to float: */
+		padding-top: 10px;
 	}
 	.individual-repo-wrap:after {
 		clear: both;
@@ -138,4 +140,8 @@ footer { clear:both; display: block; text-align: center; }
 		font-weight: bold;
 		color: white;
 		text-align: center;
+		/* to get it to float: */
+		position: fixed;
+		width: 200px;
+		margin-top: -10px;
 	}
