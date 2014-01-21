@@ -38,6 +38,7 @@
 
     // SIDEBAR EVENT LISTENTERS
     $(document).ready(function() {
+
       // adjust the height of the sidebar
       var windowh = +$(document).height();
       $('aside').css("height", windowh);
@@ -111,24 +112,23 @@
         $(this).children('i.fa-chevron-circle-right').remove();
         $(this).prepend('<i class="fa fa-github"></i> ');
         $(this).children('i.fa-minus-circle.remove').hide();
+
+      // the sidebar delete repo function
       }).on("click", 'i.fa-minus-circle.remove', function() {
         var repoName = $(this).closest('.sidebar-repo-wrap').data('reponame');
         var userName = $(this).closest('.sidebar-repo-wrap').data('username');
-        checkIfObject(repoName, userName);
+        deleteRepo(repoName, userName);
         $(this).closest('.sidebar-repo-wrap').remove();
-        createPage();
+        window.createPage();
       });
 
-      var checkIfObject = function(repoName, repoUser) {
+      // helper method for the delete repo function
+      var deleteRepo = function(repoName, repoUser) {
         for (var i = 0; i < repos.length; i += 1) {
           var user = repos[i]['user'], repo = repos[i]['repo'];
-          if (repo === repoName) {
-            console.log('this row in window.repos: ', repos[i]);
-            window.repos.splice(i, 1);
-          }
+          if (repo === repoName) { window.repos.splice(i, 1); }
         }
       };
-
     }); // end of $(document).ready();
 
 })();
