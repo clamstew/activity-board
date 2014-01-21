@@ -38,10 +38,12 @@
 <div id="help-about-modal-wrapper">
 	<div id="help-about-modal" class="shadow" style="display:none;">
 		<div class="close-modal shadow">X</div>
-		Help and about info<br />
+		<h3>Help and About ABC</h3>
 		Maker: <a href="http://github.com/clamstew" target="_blank">@clamstew</a>
-		<br />
-		<br />
+		<br clear="all" />
+		<div id="activity-board-gh-activity"></div>
+		<br clear="all" />
+		<br clear="all" />
 		COLOR KEY:<br />
 		Green = Past 2 Hours<br />
 		Orange = Past Day<br />
@@ -94,6 +96,7 @@
         		$(this).remove();
         	});
 
+        	// Render all the defualt repos to the page
 			for (var i = 0; i < repos.length; i += 1) {
 				var user = repos[i]['user'], repo = repos[i]['repo'];
 			    // create url for repo $.get call
@@ -105,6 +108,10 @@
 			    // RENDER a single repo in the SIDEBAR
 			    x.renderSidebarRepo();
 			}
+
+			// Render the activity of this repo to the help viewer modal
+        	me = new githubRepo('activity-board', 'clamstew', "https://api.github.com/repos/clamstew/activity-board/commits", "#activity-board-gh-activity");
+        	me.render();
 		};
 		createPage();
 		// set page to not refresh by default
