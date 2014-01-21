@@ -10,8 +10,9 @@
               // var $root = $('aside');
               var repoTemplate = $("#templates .repo").html();
 
-              $root.append('<div class="sidebar-repo-wrap" data-reponame=""></div>');
+              $root.append('<div class="sidebar-repo-wrap" data-reponame="" data-username=""></div>');
               $root.children(".sidebar-repo-wrap").last().data('reponame', repoName);
+              $root.children(".sidebar-repo-wrap").last().data('username', username);
 
               var repoStuffs = {
                 id: repoName,
@@ -103,12 +104,30 @@
       // so before you click it has an arrow showing you you are about to
       // go to a new page
       $('aside').on('mouseover', '.repo-row', function(){
-        $(this).children('i').remove();
+        $(this).children('i.fa-github').remove();
         $(this).prepend('<i class="fa fa-chevron-circle-right"></i>');
+        $(this).children('i.fa-minus-circle.remove').show();
       }).on('mouseout', '.repo-row', function(){
-        $(this).children('i').remove();
+        $(this).children('i.fa-chevron-circle-right').remove();
         $(this).prepend('<i class="fa fa-github"></i> ');
+        $(this).children('i.fa-minus-circle.remove').hide();
+      }).on("click", 'i.fa-minus-circle.remove', function() {
+        var repoName = $(this).closest('.sidebar-repo-wrap').data('reponame');
+        var userName = $(this).closest('.sidebar-repo-wrap').data('username');
+        checkIfObject(repoName, userName);
+        $(this).closest('.sidebar-repo-wrap').remove();
+        createPage();
       });
+
+      var checkIfObject = function(repoName, repoUser) {
+        for (var i = 0; i < repos.length; i += 1) {
+          var user = repos[i]['user'], repo = repos[i]['repo'];
+          if (repo === repoName) {
+            console.log('this row in window.repos: ', repos[i]);
+            window.repos.splice(i, 1);
+          }
+        }
+      };
 
     }); // end of $(document).ready();
 

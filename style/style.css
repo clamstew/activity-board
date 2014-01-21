@@ -95,6 +95,12 @@ aside {
 	.repo-row i {
 		font-size: 12px;
 	}
+	.repo-row i.fa.fa-minus-circle.remove {
+		display: inline-block;
+		margin-left: 5px;
+		color: red;
+		cursor: pointer;
+	}
 footer { clear:both; display: block; text-align: center; }
 #templates { display: none; }
 
