@@ -1,13 +1,10 @@
 (function () {
-// the presenter for the sidebar
+    // the presenter for the sidebar
     window.renderSidebarRepos = function() {
         return {
             render : function(repoName, username) {
               var $root = $('aside');
-              // console.log('current root', $root);
               var formattedRepo = username + " / " + repoName;
-              // console.log('repo formated', formattedRepo);
-              // var $root = $('aside');
               var repoTemplate = $("#templates .repo").html();
 
               $root.append('<div class="sidebar-repo-wrap" data-reponame="" data-username=""></div>');
@@ -63,6 +60,9 @@
       });
 
       // add repo event listeners on sidebar
+      //
+      // Listen for click on add repo button
+      // to hide and show the add repot input and style button
       $('aside .add-repo').on('click', function() {
         if ($('.add-repo-input-wrap').hasClass('tuckedaway')) {
           // Showing the add repo input box ...
@@ -120,7 +120,8 @@
         deleteRepo(repoName, userName);
         $(this).closest('.sidebar-repo-wrap').remove();
         window.createPage();
-      //
+
+      // show info / about modal function
       }).on('click', '.app-info-show', function() {
         $('#help-about-modal').show();
       });
