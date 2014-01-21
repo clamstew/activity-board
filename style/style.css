@@ -19,6 +19,21 @@ h2, p { margin: 0 0 10px 0; color: #1189d9; text-align: center; }
 	border-radius: 50%;
 }
 h3 { margin: 9px; margin-left: 0; }
+.close-modal {
+	cursor: pointer;
+	background: black;
+	border: 2px solid white;
+	color: white;
+	width: 15px;
+	height: 15px;
+	float:right;
+	margin-top:-20px;
+    margin-right:-20px;
+    -webkit-border-radius: 50%;
+	border-radius: 50%;
+	font-weight: bold;
+	padding: 10px 10px 10px 10px;
+}
 aside {
 	background: white;
 	border-right: 1px solid #1189d9;
@@ -42,10 +57,11 @@ aside {
 	aside .close:hover {
 		color: #1189d9;
 	}
-	aside .add-repo {
+	aside .add-repo, aside .app-info-show {
 		position: relative;
 		top: 0;
 		right: 0;
+		margin-left: 10px;
 		float: right;
 		cursor: pointer;
 	}
@@ -165,4 +181,31 @@ footer { clear:both; display: block; text-align: center; }
 	#fork-me-banner {
 		display: none;
 	}
+	#help-about-modal-wrapper {
+		display: none;
+	}
+}
+
+/* Modal styles */
+#help-about-modal-wrapper {
+	width: 100%;
+	position: absolute;
+	z-index: 100;
+	/*height: 400px;*/
+}
+#help-about-modal {
+	margin: 0 auto;
+	border: 2px solid #000;
+	background: white;
+	z-index: 105;
+	width: 300px;
+	height: 400px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	padding: 10px;
+}
+.shadow {
+  -moz-box-shadow:    3px 3px 5px 6px rgba(0,0,0,0.3);
+  -webkit-box-shadow: 3px 3px 5px 6px rgba(0,0,0,0.3);
+  box-shadow:         3px 3px 5px 6px rgba(0,0,0,0.3);
 }

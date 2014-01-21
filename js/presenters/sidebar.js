@@ -120,6 +120,9 @@
         deleteRepo(repoName, userName);
         $(this).closest('.sidebar-repo-wrap').remove();
         window.createPage();
+      //
+      }).on('click', '.app-info-show', function() {
+        $('#help-about-modal').show();
       });
 
       // helper method for the delete repo function
