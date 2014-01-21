@@ -148,6 +148,9 @@
             // alert("COLOR KEY:\nGreen = Past 2 Hours\nOrange = Past Day\nBlack = Older");
             $('#help-about-modal').show();
           }
+          if (evt.keyCode == 27 && $('#add-repo').is(":focus") === false) {
+            $('#help-about-modal').hide();
+          }
           // @TODO - also add same show here that is in the info button handler
       	});
 
