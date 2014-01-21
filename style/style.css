@@ -10,6 +10,9 @@ button:focus {
 }
 /* style general html elements */
 h2, p { margin: 0 0 10px 0; color: #1189d9; text-align: center; }
+h2.logo {
+	font-family: "Courier New", Courier, monospace;
+}
 .pause-page-refresh {
 	background: #1189d9;
 	color: white;

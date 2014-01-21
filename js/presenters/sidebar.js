@@ -19,7 +19,6 @@
                 repolink: this.makeRepoLink(repoName, username),
               };
               var repoHtml = $.render(repoTemplate, repoStuffs);
-              // console.log('this repo url', repoHtml);
               $root.children(".sidebar-repo-wrap").last().append(repoHtml);
             },
             makeUserLink : function(username) {
@@ -47,14 +46,12 @@
       // hide and close the sidebar
       $('aside .close').on('click', function(event) {
         event.preventDefault();
-        // console.log('close clicked');
         $('aside').hide();
         $('.aside-open').show();
       });
 
       $('.aside-open').on('click', function(event) {
         event.preventDefault();
-        // console.log('open sidebar clicked');
         $('.aside-open').hide();
         $('aside').show();
       });
