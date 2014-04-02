@@ -1,46 +1,34 @@
 window.repos = [
     {
-        user: "GeneChatham",
-        repo: "mmm"
+        user: "malls",
+        repo: "vibe"
     },
     {
-        user: "LesleyMdCampo",
-        repo: "Point_B"
+        user: "shukbot",
+        repo: "inspiral"
     },
     {
-        user: "amhayslip",
-        repo: "goforit"
+        user: "billfienberg",
+        repo: "student_tracker"
     },
     {
-        user: "krytlewski",
-        repo: "remory"
+        user: "codetriage",
+        repo: "codetriage"
     },
     {
-        user: "RollWave07",
-        repo: "CareWell"
+        user: "TheOdinProject",
+        repo: "theodinproject"
     },
     {
-        user: "caldwelljs",
-        repo: "makerpong"
+        user: "bethanynagel",
+        repo: "stormchaser"
     },
     {
-        user: "gpfeff",
-        repo: "FanFollow-2.0"
+        user: "Drewbie345",
+        repo: "MemoryKeep"
     },
     {
-        user: "erlaroche",
-        repo: "Home_Sit"
-    },
-    {
-        user: "qualquervalor",
-        repo: "we-share"
-    },
-    {
-        user: "bird-man-jr",
-        repo: "local_farm_roots"
-    },
-    {
-        user: "bensbigolbeard",
-        repo: "marsattracts"
+        user: "Micahcodes",
+        repo: "Dare-App"
     }
 ];
