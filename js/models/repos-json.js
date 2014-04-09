@@ -4,16 +4,20 @@ window.repos = [
         repo: "vibe"
     },
     {
+        user: "blackandwhitecard",
+        repo: "blackandwhitecard"
+    },
+    {
         user: "shukbot",
         repo: "inspiral"
     },
     {
-        user: "billfienberg",
-        repo: "student_tracker"
+        user: "connect2good",
+        repo: "c2g-beta"
     },
     {
-        user: "codetriage",
-        repo: "codetriage"
+        user: "bhubbard98",
+        repo: "dude-really"
     },
     {
         user: "TheOdinProject",
@@ -30,5 +34,9 @@ window.repos = [
     {
         user: "Micahcodes",
         repo: "Dare-App"
+    },
+    {
+        user: "photonerddan",
+        repo: "parley.js"
     }
 ];
