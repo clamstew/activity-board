@@ -4,8 +4,8 @@ window.repos = [
         repo: "vibe"
     },
     {
-        user: "blackandwhitecard",
-        repo: "blackandwhitecard"
+        user: "BlackCardWhiteCard",
+        repo: "BlackCardWhiteCard"
     },
     {
         user: "shukbot",
