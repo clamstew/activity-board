@@ -35,3 +35,9 @@ And contribute to the project and send me a pull request if you want.  I'm open 
 Roadmap:
 
 After I whittle down the issue. I'd like to rewrite it in backbone.
+
+---
+
+## notes:
+
+- the sass was generated with http://css2sass.herokuapp.com/ - found on http://csspre.com/convert -- need to go back and check the sass version to see it compiles to the correct css
