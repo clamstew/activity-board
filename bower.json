@@ -1,0 +1,28 @@
+{
+  "name": "activity-board",
+  "version": "0.2.0",
+  "homepage": "https://github.com/clamstew/activity-board",
+  "authors": [
+    "(Clay Stewart <claytonmstewart@gmail.com>)"
+  ],
+  "description": "An open source board of github activity diffs",
+  "main": "index.html",
+  "keywords": [
+    "open",
+    "source",
+    "github",
+    "diff",
+    "git",
+    "board",
+    "activity"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
