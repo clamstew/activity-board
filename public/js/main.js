@@ -1,5 +1,19 @@
-var app = angular.module('activity-board', []);
+'use strict';
 
-app.controller('HomeCntl', ['$scope', function($scope) {
-  $scope.testmessage = "say somthing good";
-}]);
+var activityBoard = (function(angular) {
+
+  var _app = angular.module('activityBoard', [
+    'ui.router'//,
+    //'truncate', 'ui.bootstrap'
+    ]);
+
+  var currentUserOptions = {
+    tooltips: false
+  };
+
+  var initialize = (function() {})();
+
+  return {
+    app: _app
+  };
+})(angular);
