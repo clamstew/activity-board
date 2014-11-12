@@ -1,25 +1,28 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="activity-board">
+<html lang="en" ng-app="activityBoard">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Activity Board</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!-- <link rel="stylesheet" href="style.css"> -->
+        <link rel="stylesheet" href="/style/style.css">
     </head>
     <body>
       <noscript>
         You should get some javascript!
       </noscript>
-      <div ng-include="./js/views/main.html"></div>
+      <div ui-view></div>
 
       <!-- jquery -->
-      <script type="text/javascript" src="angular/angular.js"></script>
+      <script type="text/javascript" src="/jquery/dist/jquery.min.js"></script>
       <!-- angular -->
-      <script type="text/javascript" src="js/main.js"></script>
+      <script type="text/javascript" src="/angular/angular.js"></script>
+      <script type="text/javascript" src="/angular-ui-router/release/angular-ui-router.min.js"></script>
       <!-- angular main app -->
+      <script type="text/javascript" src="./js/main.js"></script>
       <!-- angular services -->
       <!-- angular controllers -->
+      <script type="text/javascript" src="./js/controllers/main-controller.js"></script>
     </body>
 </html>
