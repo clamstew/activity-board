@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>The Control Room</title>
+	<link rel="stylesheet" type="text/css" href="style/style.css">
+	<link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- The sidebar html - hidden by default -->
+<aside style="display:none;">
+	<div class="close"><i class="fa fa-arrow-circle-left"></i></div>
+	<div class="add-repo"><i class="fa fa-plus-circle"></i></div>
+	<div class="app-info-show"><i class="fa fa-info-circle"></i></div>
+	<h3>Repos</h3>
+	<div class="add-repo-input-wrap tuckedaway" style="display:none;"><input type="text" id="add-repo" placeholder='Type "Username/Repo"' /></div>
+</aside>
+
+<!-- The main stage to see the commit activity -->
+<div id="main-layout-wrap">
+	<!-- Aside Opener -->
+	<div class="aside-open"><i class="fa fa-arrow-circle-right"></i></div>
+	<!-- Main Layout -->
+	<h2 class="logo">Always Be Committing</h2>
+	<p>Monitor Open Source Github Projects in Real Time <span class="pause-page-refresh"><i class="fa fa-play"></i></span></p>
+	<div id="commit-messages-wrap"></div>
+</div>
+
+<!-- The Fork Me Banner -->
+<a href="https://github.com/clamstew/activity-board" target="_blank" id="fork-me-banner">
+	<img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png" alt="Fork me on GitHub">
+</a>
+
+
+<!-- help and about modal -->
+<div id="help-about-modal-wrapper">
+	<div id="help-about-modal" class="shadow" style="display:none;">
+		<div class="close-modal shadow">X</div>
+		<h3>Help and About ABC</h3>
+		Maker: <a href="http://github.com/clamstew" target="_blank">@clamstew</a>
+		<br clear="all" />
+		<div id="activity-board-gh-activity"></div>
+		<br clear="all" />
+		<br clear="all" />
+		COLOR KEY:<br />
+		Green = Past 2 Hours<br />
+		Orange = Past Day<br />
+		Black = Older
+	</div>
+</div>
+
+<!-- Riot.js Templates for use around the app with javascript -->
+<div id="templates">
+  <script type="text/template"  class="commit">
+    <div class="commit-message { recent }" data-repo="{ id }">
+        <strong><a href="{ userlink }" target="_blank">{ user }</a>:</strong> { message }<br />
+        <small>{ date } | <a href="{ link }" target="_blank">Link</small>
+    </div>
+  </script>
+
+  <script type="text/template" class="repo">
+    <div class="repo-row">
+        <i class="fa fa-github"></i> <a href="{ repolink }" target="_blank"><strong>{ user } / { repo }</strong></a><i style="display:none;" class="fa fa-minus-circle remove"></i>
+    </div>
+  </script>
+</div>
+
+
+<!-- The Javascripts -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<!-- Utility functions -->
+<script src="js/utils.js"></script>
+<!-- Riot.js -->
+<script src="js/vendor/riot.js"></script>
+<!-- Riot.js Models -->
+<script src="js/models/repos-json.js"></script>
+<script src="js/models/repo.js"></script>
+<!-- Riot.js Presenters -->
+<script src="js/presenters/repo-commits.js"></script>
+<script src="js/presenters/sidebar.js"></script>
+<!-- Application Themes -->
+<script src="js/presenters/themes.js"></script>
+<!-- Main js -->
+<script type="text/javascript">
+	$(document).ready(function() {
+
+		//// Loop through the repos from repos-json.js
+		// and crete this page
+		// also used on a 30 second interval when live is on
+		// and when the data model is updated
+		window.createPage = function() {
+			// clear the sidebar area
+        	$(".sidebar-repo-wrap").remove();
+        	// clear the main page commit boxes
+        	$(".individual-repo-wrap").fadeOut('fast', function() {
+        		$(this).remove();
+        	});
+
+        	// Render all the defualt repos to the page
+			for (var i = 0; i < repos.length; i += 1) {
+				var user = repos[i]['user'], repo = repos[i]['repo'];
+			    // create url for repo $.get call
+		        var repoUrl = "https://api.github.com/repos/" + user + "/" + repo + "/commits";
+		        // MAKE a new instance of a github repo
+			    x = new githubRepo(repo, user, repoUrl, "#commit-messages-wrap");
+			    // RENDER a box of this repos commits to the main section of the page
+			    x.render();
+			    // RENDER a single repo in the SIDEBAR
+			    x.renderSidebarRepo();
+			}
+
+			// Render the activity of this repo to the help viewer modal
+        	me = new githubRepo('activity-board', 'clamstew', "https://api.github.com/repos/clamstew/activity-board/commits", "#activity-board-gh-activity");
+        	me.render();
+		};
+		createPage();
+		// set page to not refresh by default
+		window.pausePageRefresh = true;
+		// run the create page function every 30 seconds => 30000
+		setInterval(function(){
+			if (window.pausePageRefresh === true) {
+			  return;
+			}
+			createPage();
+			// console.log('ran create page function on interval');
+		},1200000); // 20 minutes
+
+		// Page Behavior event listeners:
+		$(".pause-page-refresh").on("click", function() {
+		  if (window.pausePageRefresh === false) {
+		    window.pausePageRefresh = true;
+		    // toggle icon to play button
+		    $(this).html('<i class="fa fa-play"></i>');
+		  } else {
+		    window.pausePageRefresh = false;
+		    // toggle icon back to a pause button
+		    $(this).html('<i class="fa fa-pause"></i>');
+		  }
+		  // console.log('page refresh pause or play toggled', window.pausePageRefresh);
+		});
+
+		// global keypress handlers
+		$(document).bind('keyup', function (evt) {
+          // basic help event
+          if (evt.keyCode == 191 && $('#add-repo').is(":focus") === false) {
+            // alert("COLOR KEY:\nGreen = Past 2 Hours\nOrange = Past Day\nBlack = Older");
+            $('#help-about-modal').show();
+          }
+          if (evt.keyCode == 27 && $('#add-repo').is(":focus") === false) {
+            $('#help-about-modal').hide();
+          }
+          // @TODO - also add same show here that is in the info button handler
+      	});
+
+      	// close the help modal function
+      	$('.close-modal').on('click', function() {
+      		$('#help-about-modal').hide();
+      	});
+	});
+</script>
+
+</body>
+</html>
