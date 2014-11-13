@@ -1,5 +1,6 @@
 {
   "name": "activity-board",
+  "repository": "https://github.com/clamstew/activity-board",
   "version": "0.0.1",
   "private": true,
   "scripts": {
