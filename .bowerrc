@@ -1,4 +1,4 @@
 {
-  "directory": ".tmp/bower_components/",
+  "directory": "public/bower_components/",
   "analytics": false
 }
