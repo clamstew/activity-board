@@ -11,13 +11,17 @@ module.exports = function(router) {
     var count = 0;
 
     // Walker options
-    var walker  = walk.walk('./public', { followLinks: false });
+    var walker  = walk.walk('./.tmp/', { followLinks: false });
 
     // print out the public directory to console
     walker.on('directory', function (path, stat, next) {
       count += 1;
       console.log( [path, '/', stat.name].join('') )
       next();
+    });
+
+    walker.on('end', function() {
+        console.log('done walking...');
     });
 
   });
