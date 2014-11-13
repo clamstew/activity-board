@@ -24,7 +24,7 @@ require('./routes')(app);
 
 // include both public and bower_components dir for static assets
 app.use(express.static(path.join(__dirname, 'public')))
-   .use(express.static(path.join(__dirname, 'bower_components')));
+   .use(express.static(path.join(__dirname, 'public/bower_components')));
 
 // development only
 if ('development' == app.get('env')) {
