@@ -41,3 +41,7 @@ After I whittle down the issue. I'd like to rewrite it in backbone.
 ## notes:
 
 - the sass was generated with http://css2sass.herokuapp.com/ - found on http://csspre.com/convert -- need to go back and check the sass version to see it compiles to the correct css
+
+---
+
+check out this tutorial for deploying node to heroku - http://www.pluralsight.com/courses/table-of-contents/building-angularjs-nodejs-apps-mean
