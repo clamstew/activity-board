@@ -1,0 +1,65 @@
+// semantic colors for commit messages
+.recent
+  color: green
+
+.past-day
+  color: orange
+
+// a repo box
+.individual-repo-wrap
+  background: #fff
+  border: 2px solid #1189d9
+  float: left
+  height: 200px
+  margin: 0 0 10px 10px
+  overflow-x: hidden
+  overflow-y: scroll
+  // to get it to float:
+  padding-top: 25px
+  width: 200px
+  &:after
+    clear: both
+  .title
+    background: #1189d9
+    font-weight: bold
+    color: white
+    text-align: center
+    // to get it to float:
+    position: absolute
+    width: 200px
+    margin-top: -25px
+    padding: 5px 0
+    a
+      text-decoration: none
+      color: white
+      &:hover
+        text-decoration: underline
+
+// commit rows inside a repo box
+.repo-row
+  a
+    color: black
+    font-size: 10px
+    text-decoration: none
+    &:hover
+      text-decoration: underline
+  i
+    font-size: 12px
+    &.fa.fa-minus-circle.remove
+      display: inline-block
+      margin-left: 5px
+      color: red
+      cursor: pointer
+
+// a commit message
+.commit-message
+  border: 1px solid #ccc
+  padding: 5px
+  width: 188px
+  a
+    text-decoration: none
+    color: inherit
+    &:hover
+      text-decoration: underline
+  small
+    color: #ccc
