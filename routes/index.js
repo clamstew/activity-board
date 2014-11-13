@@ -11,7 +11,7 @@ module.exports = function(router) {
     var count = 0;
 
     // Walker options
-    var walker  = walk.walk('./.tmp/', { followLinks: false });
+    var walker  = walk.walk('.tmp/', { followLinks: false });
 
     // print out the public directory to console
     walker.on('directory', function (path, stat, next) {
