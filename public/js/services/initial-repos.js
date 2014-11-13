@@ -13,6 +13,10 @@
       {
         user: 'clamstew',
         repo: 'backbone-todo-app'
+      },
+      {
+        user: 'clamstew',
+        repo: 'shout'
       }
     ]
   });
