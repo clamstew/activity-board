@@ -2,6 +2,6 @@
 // for the comparison with commit
 // message date
 Date.prototype.minusHours = function(hrs) {
-    this.setHours(this.getHours() - hrs);
-    return this;
+  this.setHours(this.getHours() - hrs);
+  return this;
 };

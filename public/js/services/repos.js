@@ -10,11 +10,20 @@
     o.repos = [];
 
     o.getAll = function() {
+      var createClass = function(date, currentdatetimeMinusTwo, currentdatetimeMinusDay) {
+        // add classes for how recent the commit was
+        var recent;
+        if ( date > currentdatetimeMinusTwo ) {
+            recent = "recent";
+        } else if ( date > currentdatetimeMinusDay && date < currentdatetimeMinusTwo ) {
+            recent = "past-day";
+        } else {
+            recent = "";
+        }
+        return recent;
+      };
       var makeUsernameAndLink = function(commitDiffs) {
-        console.log('what is the repoOb', commitDiffs);
-        // var ghUsername, ghUsernameLink;
         _.each(commitDiffs, function(commit){
-          console.log('what is a commit', commit);
           if (commit.author !== null) {
             commit.ghUsername = commit.author.login;
             commit.ghProfileLink = commit.author.html_url;
@@ -22,8 +31,17 @@
             commit.ghUsername = commit.commit.author.name;
             commit.ghProfileLink = 'http://github.com';
           }
+          commit = makeDates(commit);
         });
         return commitDiffs;
+      };
+      var makeDates = function(commit) {
+        var currentdatetimeMinusTwo = new Date().minusHours(2);
+        var currentdatetimeMinusDay = new Date().minusHours(24);
+        var date = new Date(commit.commit.author.date);
+        commit.recent = createClass(date, currentdatetimeMinusTwo, currentdatetimeMinusDay);
+        commit.date = date.toLocaleDateString() + " | " + date.toLocaleTimeString();
+        return commit;
       };
 
       if(initialRepos && initialRepos.length) {
@@ -31,15 +49,12 @@
           var repoUrl = "https://api.github.com/repos/" + repo.user + "/" + repo.repo + "/commits";
           $http.get(repoUrl).
             success(function(data, status, headers, config) {
-              // this callback will be called asynchronously
-              // when the response is available
               data = makeUsernameAndLink(data);
               repo.commits = data;
               o.repos.push(repo);
             }).
             error(function(data, status, headers, config) {
-              // called asynchronously if an error occurs
-              // or server returns response with an error status.
+              // any ajax call errors
               console.warn('GET Error from server', status);
             });
         });
