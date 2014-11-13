@@ -2101,6 +2101,72 @@
 .fa-meanpath:before {
   content: "\f20c"; }
 
+/* line 1, /Users/cstewart/code/clay/activity-board/public/style/global */
+* {
+  font-family: sans-serif; }
+
+/* line 4, /Users/cstewart/code/clay/activity-board/public/style/global */
+body {
+  margin: 0;
+  padding: 0;
+  background: #f0f4f5 url('../images/polaroid.png'); }
+
+/* remove webkit highlighting from form elements */
+/* line 11, /Users/cstewart/code/clay/activity-board/public/style/global */
+input:focus, select:focus, textarea:focus, button:focus {
+  outline: none; }
+
+/* style general html elements */
+/* line 16, /Users/cstewart/code/clay/activity-board/public/style/global */
+h2, p {
+  margin: 0 0 10px 0;
+  color: #1189d9;
+  text-align: center; }
+
+/* line 21, /Users/cstewart/code/clay/activity-board/public/style/global */
+h2.logo {
+  font-family: "Courier New", Courier, monospace; }
+
+/* line 24, /Users/cstewart/code/clay/activity-board/public/style/global */
+.pause-page-refresh {
+  background: #1189d9;
+  color: white;
+  cursor: pointer;
+  padding: 5px;
+  -webkit-border-radius: 50%;
+  border-radius: 50%; }
+
+/* line 32, /Users/cstewart/code/clay/activity-board/public/style/global */
+h3 {
+  margin: 9px;
+  margin-left: 0; }
+
+/* line 36, /Users/cstewart/code/clay/activity-board/public/style/global */
+footer {
+  clear: both;
+  display: block;
+  text-align: center; }
+
+/* line 41, /Users/cstewart/code/clay/activity-board/public/style/global */
+#templates {
+  display: none; }
+
+/* line 44, /Users/cstewart/code/clay/activity-board/public/style/global */
+#main-layout-wrap {
+  padding: 15px 0 0 0; }
+
+@media all and (max-width: 40em) {
+  /* line 48, /Users/cstewart/code/clay/activity-board/public/style/global */
+  #fork-me-banner, #help-about-modal-wrapper {
+    display: none; }
+ }
+
+/* line 51, /Users/cstewart/code/clay/activity-board/public/style/global */
+.shadow {
+  -moz-box-shadow: 3px 3px 5px 6px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 3px 3px 5px 6px rgba(0, 0, 0, 0.3);
+  box-shadow: 3px 3px 5px 6px rgba(0, 0, 0, 0.3); }
+
 /* line 1, /Users/cstewart/code/clay/activity-board/public/style/sidebar */
 aside {
   background: white;
@@ -2279,71 +2345,5 @@ aside {
   /* line 58, /Users/cstewart/code/clay/activity-board/public/style/repo */
   .commit-message small {
     color: #ccc; }
-
-/* line 1, /Users/cstewart/code/clay/activity-board/public/style/style */
-* {
-  font-family: sans-serif; }
-
-/* line 4, /Users/cstewart/code/clay/activity-board/public/style/style */
-body {
-  margin: 0;
-  padding: 0;
-  background: #f0f4f5 url('../images/polaroid.png'); }
-
-/* remove webkit highlighting from form elements */
-/* line 11, /Users/cstewart/code/clay/activity-board/public/style/style */
-input:focus, select:focus, textarea:focus, button:focus {
-  outline: none; }
-
-/* style general html elements */
-/* line 16, /Users/cstewart/code/clay/activity-board/public/style/style */
-h2, p {
-  margin: 0 0 10px 0;
-  color: #1189d9;
-  text-align: center; }
-
-/* line 21, /Users/cstewart/code/clay/activity-board/public/style/style */
-h2.logo {
-  font-family: "Courier New", Courier, monospace; }
-
-/* line 24, /Users/cstewart/code/clay/activity-board/public/style/style */
-.pause-page-refresh {
-  background: #1189d9;
-  color: white;
-  cursor: pointer;
-  padding: 5px;
-  -webkit-border-radius: 50%;
-  border-radius: 50%; }
-
-/* line 32, /Users/cstewart/code/clay/activity-board/public/style/style */
-h3 {
-  margin: 9px;
-  margin-left: 0; }
-
-/* line 36, /Users/cstewart/code/clay/activity-board/public/style/style */
-footer {
-  clear: both;
-  display: block;
-  text-align: center; }
-
-/* line 41, /Users/cstewart/code/clay/activity-board/public/style/style */
-#templates {
-  display: none; }
-
-/* line 44, /Users/cstewart/code/clay/activity-board/public/style/style */
-#main-layout-wrap {
-  padding: 15px 0 0 0; }
-
-@media all and (max-width: 40em) {
-  /* line 48, /Users/cstewart/code/clay/activity-board/public/style/style */
-  #fork-me-banner, #help-about-modal-wrapper {
-    display: none; }
- }
-
-/* line 51, /Users/cstewart/code/clay/activity-board/public/style/style */
-.shadow {
-  -moz-box-shadow: 3px 3px 5px 6px rgba(0, 0, 0, 0.3);
-  -webkit-box-shadow: 3px 3px 5px 6px rgba(0, 0, 0, 0.3);
-  box-shadow: 3px 3px 5px 6px rgba(0, 0, 0, 0.3); }
 
 /*# sourceMappingURL=main.css.map */
