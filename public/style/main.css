@@ -2162,13 +2162,14 @@ aside {
   background: white;
   border-right: 1px solid #1189d9;
   bottom: 0;
-  left: 0;
+  display: none;
   float: left;
   height: 100%;
+  left: 0;
   padding: 10px;
   top: 0;
   width: 200px; }
-  /* line 61, /Users/cstewart/code/clay/activity-board/public/style/style */
+  /* line 62, /Users/cstewart/code/clay/activity-board/public/style/style */
   aside .close {
     clear: both;
     cursor: pointer;
@@ -2177,10 +2178,10 @@ aside {
     position: relative;
     right: 0;
     top: 0; }
-    /* line 69, /Users/cstewart/code/clay/activity-board/public/style/style */
+    /* line 70, /Users/cstewart/code/clay/activity-board/public/style/style */
     aside .close:hover {
       color: #1189d9; }
-  /* line 71, /Users/cstewart/code/clay/activity-board/public/style/style */
+  /* line 72, /Users/cstewart/code/clay/activity-board/public/style/style */
   aside .add-repo, aside .app-info-show {
     position: relative;
     top: 0;
@@ -2188,16 +2189,16 @@ aside {
     margin-left: 10px;
     float: right;
     cursor: pointer; }
-  /* line 79, /Users/cstewart/code/clay/activity-board/public/style/style */
+  /* line 80, /Users/cstewart/code/clay/activity-board/public/style/style */
   aside .add-repo:hover {
     color: green; }
-  /* line 82, /Users/cstewart/code/clay/activity-board/public/style/style */
+  /* line 83, /Users/cstewart/code/clay/activity-board/public/style/style */
   aside .add-repo i.fa.fa-plus-circle:hover {
     color: green; }
-  /* line 84, /Users/cstewart/code/clay/activity-board/public/style/style */
+  /* line 85, /Users/cstewart/code/clay/activity-board/public/style/style */
   aside .add-repo i.fa.fa-minus-circle:hover {
     color: red; }
-  /* line 86, /Users/cstewart/code/clay/activity-board/public/style/style */
+  /* line 87, /Users/cstewart/code/clay/activity-board/public/style/style */
   aside input[type="text"]#add-repo {
     border: 1px solid black;
     border-top: 1px solid white;
@@ -2209,7 +2210,7 @@ aside {
     padding: 5px 0;
     width: 180px; }
 
-/* line 97, /Users/cstewart/code/clay/activity-board/public/style/style */
+/* line 98, /Users/cstewart/code/clay/activity-board/public/style/style */
 .aside-open {
   background: #1189d9;
   -webkit-border-radius: 0 0 10px 0;
@@ -2223,67 +2224,67 @@ aside {
   position: absolute;
   width: 20px;
   z-index: 100; }
-  /* line 110, /Users/cstewart/code/clay/activity-board/public/style/style */
+  /* line 111, /Users/cstewart/code/clay/activity-board/public/style/style */
   .aside-open:hover {
     background: black; }
 
-/* line 114, /Users/cstewart/code/clay/activity-board/public/style/style */
+/* line 115, /Users/cstewart/code/clay/activity-board/public/style/style */
 .repo-row a {
   color: black;
   font-size: 10px;
   text-decoration: none; }
-  /* line 118, /Users/cstewart/code/clay/activity-board/public/style/style */
+  /* line 119, /Users/cstewart/code/clay/activity-board/public/style/style */
   .repo-row a:hover {
     text-decoration: underline; }
-/* line 120, /Users/cstewart/code/clay/activity-board/public/style/style */
+/* line 121, /Users/cstewart/code/clay/activity-board/public/style/style */
 .repo-row i {
   font-size: 12px; }
-  /* line 122, /Users/cstewart/code/clay/activity-board/public/style/style */
+  /* line 123, /Users/cstewart/code/clay/activity-board/public/style/style */
   .repo-row i.fa.fa-minus-circle.remove {
     display: inline-block;
     margin-left: 5px;
     color: red;
     cursor: pointer; }
 
-/* line 128, /Users/cstewart/code/clay/activity-board/public/style/style */
+/* line 129, /Users/cstewart/code/clay/activity-board/public/style/style */
 footer {
   clear: both;
   display: block;
   text-align: center; }
 
-/* line 133, /Users/cstewart/code/clay/activity-board/public/style/style */
+/* line 134, /Users/cstewart/code/clay/activity-board/public/style/style */
 #templates {
   display: none; }
 
-/* line 136, /Users/cstewart/code/clay/activity-board/public/style/style */
+/* line 137, /Users/cstewart/code/clay/activity-board/public/style/style */
 #main-layout-wrap {
   padding: 15px 0 0 0; }
 
-/* line 140, /Users/cstewart/code/clay/activity-board/public/style/style */
+/* line 141, /Users/cstewart/code/clay/activity-board/public/style/style */
 .commit-message {
   border: 1px solid #ccc;
   padding: 5px;
   width: 188px; }
-  /* line 144, /Users/cstewart/code/clay/activity-board/public/style/style */
+  /* line 145, /Users/cstewart/code/clay/activity-board/public/style/style */
   .commit-message a {
     text-decoration: none;
     color: inherit; }
-    /* line 147, /Users/cstewart/code/clay/activity-board/public/style/style */
+    /* line 148, /Users/cstewart/code/clay/activity-board/public/style/style */
     .commit-message a:hover {
       text-decoration: underline; }
-  /* line 149, /Users/cstewart/code/clay/activity-board/public/style/style */
+  /* line 150, /Users/cstewart/code/clay/activity-board/public/style/style */
   .commit-message small {
     color: #ccc; }
 
-/* line 152, /Users/cstewart/code/clay/activity-board/public/style/style */
+/* line 153, /Users/cstewart/code/clay/activity-board/public/style/style */
 .recent {
   color: green; }
 
-/* line 155, /Users/cstewart/code/clay/activity-board/public/style/style */
+/* line 156, /Users/cstewart/code/clay/activity-board/public/style/style */
 .past-day {
   color: orange; }
 
-/* line 158, /Users/cstewart/code/clay/activity-board/public/style/style */
+/* line 159, /Users/cstewart/code/clay/activity-board/public/style/style */
 .individual-repo-wrap {
   background: #fff;
   border: 2px solid #1189d9;
@@ -2294,10 +2295,10 @@ footer {
   overflow-y: scroll;
   padding-top: 25px;
   width: 200px; }
-  /* line 168, /Users/cstewart/code/clay/activity-board/public/style/style */
+  /* line 169, /Users/cstewart/code/clay/activity-board/public/style/style */
   .individual-repo-wrap:after {
     clear: both; }
-  /* line 170, /Users/cstewart/code/clay/activity-board/public/style/style */
+  /* line 171, /Users/cstewart/code/clay/activity-board/public/style/style */
   .individual-repo-wrap .title {
     background: #1189d9;
     font-weight: bold;
@@ -2307,27 +2308,27 @@ footer {
     width: 200px;
     margin-top: -25px;
     padding: 5px 0; }
-    /* line 179, /Users/cstewart/code/clay/activity-board/public/style/style */
+    /* line 180, /Users/cstewart/code/clay/activity-board/public/style/style */
     .individual-repo-wrap .title a {
       text-decoration: none;
       color: white; }
-      /* line 182, /Users/cstewart/code/clay/activity-board/public/style/style */
+      /* line 183, /Users/cstewart/code/clay/activity-board/public/style/style */
       .individual-repo-wrap .title a:hover {
         text-decoration: underline; }
 
 @media all and (max-width: 40em) {
-  /* line 186, /Users/cstewart/code/clay/activity-board/public/style/style */
+  /* line 187, /Users/cstewart/code/clay/activity-board/public/style/style */
   #fork-me-banner, #help-about-modal-wrapper {
     display: none; }
  }
 
-/* line 190, /Users/cstewart/code/clay/activity-board/public/style/style */
+/* line 191, /Users/cstewart/code/clay/activity-board/public/style/style */
 #help-about-modal-wrapper {
   width: 100%;
   position: absolute;
   z-index: 100; }
 
-/* line 195, /Users/cstewart/code/clay/activity-board/public/style/style */
+/* line 196, /Users/cstewart/code/clay/activity-board/public/style/style */
 #help-about-modal {
   margin: 0 auto;
   border: 2px solid #000;
@@ -2339,7 +2340,7 @@ footer {
   border-radius: 10px;
   padding: 10px; }
 
-/* line 206, /Users/cstewart/code/clay/activity-board/public/style/style */
+/* line 207, /Users/cstewart/code/clay/activity-board/public/style/style */
 .shadow {
   -moz-box-shadow: 3px 3px 5px 6px rgba(0, 0, 0, 0.3);
   -webkit-box-shadow: 3px 3px 5px 6px rgba(0, 0, 0, 0.3);

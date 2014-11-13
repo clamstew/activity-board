@@ -1,6 +1,10 @@
+<!-- Aside Opener -->
+<div class="aside-open" ng-click="showSidebar()">
+  <i class="fa fa-arrow-circle-right"></i>
+</div>
 <!-- The sidebar html - hidden by default -->
-<aside style="display:none;">
-  <div class="close"><i class="fa fa-arrow-circle-left"></i></div>
+<aside>
+  <div class="close" ng-click="hideSidebar()"><i class="fa fa-arrow-circle-left"></i></div>
   <div class="add-repo"><i class="fa fa-plus-circle"></i></div>
   <div class="app-info-show"><i class="fa fa-info-circle"></i></div>
   <h3>Repos</h3>
