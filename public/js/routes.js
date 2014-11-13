@@ -9,7 +9,12 @@
         .state('home', {
           url: '/',
           templateUrl: './js/views/main.html',
-          controller: 'MainCtrl'
+          controller: 'MainCtrl',
+          resolve: {
+            reposPromise: ['repos', function(repos) {
+              return repos.getAll();
+            }]
+          }
         });
 
       $urlRouterProvider.otherwise('home');

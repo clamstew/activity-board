@@ -18,6 +18,9 @@ While initially intended for monitoring the final projects of [@makersquare](htt
 
 <a href="http://www.alwaysbecommitting.com/" target="_blank">www.alwaysbecommitting.com</a>
 
+The angular version will exist here for the time being:
+<a href="https://activity-board.herokuapp.com/#/" target="_blank">https://activity-board.herokuapp.com/#/</a>
+
 ---
 
 **Development Site**
@@ -45,3 +48,7 @@ After I whittle down the issue. I'd like to rewrite it in backbone.
 ---
 
 check out this tutorial for deploying node to heroku - http://www.pluralsight.com/courses/table-of-contents/building-angularjs-nodejs-apps-mean
+
+---
+
+Future Development: should make this product get all commits on all branches

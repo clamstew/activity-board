@@ -2,8 +2,10 @@
 
 (function(app) {
 
-  app.controller('MainCtrl', ['$scope', function($scope){
-    
+  app.controller('MainCtrl', ['$scope', 'repos', function($scope, repos){
+
+    $scope.repos = repos;
+    console.log('$scope.repos', $scope.repos);
 
   }]);
 

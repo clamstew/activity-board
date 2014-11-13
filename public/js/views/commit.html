@@ -1,0 +1,19 @@
+<div ng-repeat="repo in repos.repos" class="individual-repo-wrap">
+<!--   <div class="commit-message {{ commit.recent }}" data-repo="{{ commit.id }}">
+      <strong><a href="{{ commit.userlink }}" target="_blank">{{ commit.user }}</a>:</strong> {{ commit.message }}<br />
+      <small>{{ commit.date }} | <a href="{{ commit.link }}" target="_blank">Link</small>
+  </div> -->
+  <!-- repo main blue title -->
+  <div class="title"><a ng-href="http://github.com/{{repo.user}}/{{repo.repo}}" target="_blank">/&nbsp;{{repo.repo}}</a></div>
+
+  <!-- repo's list of commit messages -->
+  <div class="commit-message" ng-repeat="commit in repo.commits">
+    <strong>
+      <a ng-href="{{ commit.ghProfileLink }}" target="_blank">
+      {{ commit.ghUsername }}</a>:
+    </strong>
+    {{ commit.commit.message }}
+    <br />
+    <small>commit date | <a target="_blank">Link</a></small>
+  </div>
+</div>
