@@ -51,4 +51,5 @@ check out this tutorial for deploying node to heroku - http://www.pluralsight.co
 
 ---
 
-Future Development: should make this product get all commits on all branches
+Future Development: should make this product get/display all commits on all branches
+Need some sort of user experience for toggling different branches
