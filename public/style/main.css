@@ -2203,17 +2203,15 @@ aside {
     color: red; }
   /* line 32, /Users/cstewart/code/clay/activity-board/public/style/sidebar */
   aside input[type="text"]#add-repo {
-    border: 1px solid black;
-    border-top: 1px solid white;
-    border-right: 1px solid white;
-    border-left: 1px solid white;
+    border: 1px solid white;
+    border-bottom: 1px solid black;
     margin-bottom: 10px;
     font-size: 16px;
     font-weight: 500;
     padding: 5px 0;
     width: 180px; }
 
-/* line 43, /Users/cstewart/code/clay/activity-board/public/style/sidebar */
+/* line 41, /Users/cstewart/code/clay/activity-board/public/style/sidebar */
 .aside-open {
   background: #1189d9;
   -webkit-border-radius: 0 0 10px 0;
@@ -2227,7 +2225,7 @@ aside {
   position: absolute;
   width: 20px;
   z-index: 100; }
-  /* line 56, /Users/cstewart/code/clay/activity-board/public/style/sidebar */
+  /* line 54, /Users/cstewart/code/clay/activity-board/public/style/sidebar */
   .aside-open:hover {
     background: black; }
 
