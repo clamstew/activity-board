@@ -5,7 +5,7 @@
   app.directive('repoTemplate', function() {
     return {
       restrict: 'A',
-      templateUrl: '../js/views/commit.html'
+      templateUrl: '../js/views/repo-template.html'
     } 
   });
 
