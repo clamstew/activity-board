@@ -73,6 +73,9 @@
       // else { // see if any repos are stored in local storage // otherwise init to empty array of repos}
     };
 
+    // remove a repo from the this.repos object
+    o.remove = function(repo) {};
+
     return o;
   }]);
 
