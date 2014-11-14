@@ -3,6 +3,9 @@
 <div class="aside-open" ng-hide="sidebarOpen" ng-click="toggleSidebar()">
   <i class="fa fa-arrow-circle-right"></i>
 </div>
+
+
+
 <!-- The sidebar html - hidden by default -->
 <!-- (hidden by default - closed when aside opener is shown) -->
 <aside ng-show="sidebarOpen">
@@ -27,4 +30,16 @@
   <div ng-show="addRepoInputDisplay">
     <input type="text" id="add-repo" placeholder='Type "Username/Repo"' />
   </div>
+
+  <!-- list of repos here with links and remove -->
+  <div class="sidebar-repo-wrap" ng-repeat="repo in repos.repos">
+    <div class="repo-row">
+        <i class="fa fa-github"></i>&nbsp;
+        <a ng-href="{{ repo.repolink }}" target="_blank">
+          <strong>{{ repo.user }} / {{ repo.repo }}</strong>
+        </a>
+        <i style="display:none;" class="fa fa-minus-circle remove"></i>
+    </div>
+  </div>
+
 </aside>

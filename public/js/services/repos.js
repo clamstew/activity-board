@@ -44,6 +44,14 @@
         commit.date = date.toLocaleDateString() + " | " + date.toLocaleTimeString();
         return commit;
       };
+      var makeUserLink = function(repo) {
+        var link = "http://github.com/" + repo.user;
+        return link;
+      };
+      var makeRepoLink = function(repo) {
+        var link = "http://github.com/" + repo.user + "/" + repo.repo;
+        return link;
+      };
 
       if(initialRepos && initialRepos.length) {
         _.each(initialRepos, function(repo) {
@@ -52,6 +60,8 @@
             success(function(data, status, headers, config) {
               data = makeUsernameAndLink(data);
               repo.commits = data;
+              repo.userLink = makeUserLink(repo);
+              repo.repoLink = makeRepoLink(repo);
               o.repos.push(repo);
             }).
             error(function(data, status, headers, config) {
