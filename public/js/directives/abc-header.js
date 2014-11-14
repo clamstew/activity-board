@@ -2,9 +2,9 @@
 
 (function(app) {
 
-  app.directive('abcHeader', function() {
+  app.directive('abcHeader', ['userSettings', function(userSettings) {
     var link = function(scope){
-      scope.title = 'Always Be Committing';
+      scope.title = userSettings.siteTitle;
       scope.subTitle = 'Monitor Open Source Github Projects in Real Time ';
     };
     return {
@@ -12,6 +12,6 @@
       link: link,
       templateUrl: '../js/views/abc-header.html'
     }
-  });
+  }]);
 
 })(activityBoard.app);
