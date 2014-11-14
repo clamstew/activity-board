@@ -2209,9 +2209,6 @@ aside {
   aside .add-repo i.fa.fa-minus-circle:hover {
     color: red; }
   /* line 39, /Users/cstewart/code/clay/activity-board/public/style/sidebar */
-  aside .add-repo-input-wrap {
-    display: none; }
-  /* line 41, /Users/cstewart/code/clay/activity-board/public/style/sidebar */
   aside input[type="text"]#add-repo {
     border: 1px solid black;
     border-top: 1px solid white;
@@ -2223,7 +2220,7 @@ aside {
     padding: 5px 0;
     width: 180px; }
 
-/* line 52, /Users/cstewart/code/clay/activity-board/public/style/sidebar */
+/* line 50, /Users/cstewart/code/clay/activity-board/public/style/sidebar */
 .aside-open {
   background: #1189d9;
   -webkit-border-radius: 0 0 10px 0;
@@ -2237,7 +2234,7 @@ aside {
   position: absolute;
   width: 20px;
   z-index: 100; }
-  /* line 65, /Users/cstewart/code/clay/activity-board/public/style/sidebar */
+  /* line 63, /Users/cstewart/code/clay/activity-board/public/style/sidebar */
   .aside-open:hover {
     background: black; }
 
