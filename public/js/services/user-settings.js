@@ -1,4 +1,5 @@
-// goes out and gets the commits for each repo
+// this can map to a user settings view
+// where they can set all the prefs for this
 
 (function(app) {
 
