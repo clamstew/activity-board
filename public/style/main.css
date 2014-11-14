@@ -2179,7 +2179,7 @@ aside {
   padding: 10px;
   top: 0;
   width: 200px; }
-  /* line 12, /Users/cstewart/code/clay/activity-board/public/style/sidebar */
+  /* line 13, /Users/cstewart/code/clay/activity-board/public/style/sidebar */
   aside .close {
     clear: both;
     cursor: pointer;
@@ -2188,10 +2188,10 @@ aside {
     position: relative;
     right: 0;
     top: 0; }
-    /* line 20, /Users/cstewart/code/clay/activity-board/public/style/sidebar */
+    /* line 21, /Users/cstewart/code/clay/activity-board/public/style/sidebar */
     aside .close:hover {
       color: #1189d9; }
-  /* line 22, /Users/cstewart/code/clay/activity-board/public/style/sidebar */
+  /* line 23, /Users/cstewart/code/clay/activity-board/public/style/sidebar */
   aside .add-repo, aside .app-info-show {
     position: relative;
     top: 0;
@@ -2199,16 +2199,19 @@ aside {
     margin-left: 10px;
     float: right;
     cursor: pointer; }
-  /* line 30, /Users/cstewart/code/clay/activity-board/public/style/sidebar */
+  /* line 31, /Users/cstewart/code/clay/activity-board/public/style/sidebar */
   aside .add-repo:hover {
     color: green; }
-  /* line 33, /Users/cstewart/code/clay/activity-board/public/style/sidebar */
+  /* line 34, /Users/cstewart/code/clay/activity-board/public/style/sidebar */
   aside .add-repo i.fa.fa-plus-circle:hover {
     color: green; }
-  /* line 35, /Users/cstewart/code/clay/activity-board/public/style/sidebar */
+  /* line 36, /Users/cstewart/code/clay/activity-board/public/style/sidebar */
   aside .add-repo i.fa.fa-minus-circle:hover {
     color: red; }
-  /* line 37, /Users/cstewart/code/clay/activity-board/public/style/sidebar */
+  /* line 39, /Users/cstewart/code/clay/activity-board/public/style/sidebar */
+  aside .add-repo-input-wrap {
+    display: none; }
+  /* line 41, /Users/cstewart/code/clay/activity-board/public/style/sidebar */
   aside input[type="text"]#add-repo {
     border: 1px solid black;
     border-top: 1px solid white;
@@ -2220,7 +2223,7 @@ aside {
     padding: 5px 0;
     width: 180px; }
 
-/* line 48, /Users/cstewart/code/clay/activity-board/public/style/sidebar */
+/* line 52, /Users/cstewart/code/clay/activity-board/public/style/sidebar */
 .aside-open {
   background: #1189d9;
   -webkit-border-radius: 0 0 10px 0;
@@ -2234,7 +2237,7 @@ aside {
   position: absolute;
   width: 20px;
   z-index: 100; }
-  /* line 61, /Users/cstewart/code/clay/activity-board/public/style/sidebar */
+  /* line 65, /Users/cstewart/code/clay/activity-board/public/style/sidebar */
   .aside-open:hover {
     background: black; }
 

@@ -1,4 +1,4 @@
-// sidebar styles
+// Open Sidebar styles
 aside
   background: white
   border-right: 1px solid #1189d9
@@ -10,6 +10,8 @@ aside
   padding: 10px
   top: 0
   width: 200px
+
+  // icons on top right of sidebar
   .close
     clear: both
     cursor: pointer
@@ -35,6 +37,10 @@ aside
         color: green
       &.fa-minus-circle:hover
         color: red
+
+  // add new repo wrap and input
+  .add-repo-input-wrap
+    display: none
   input[type="text"]#add-repo
     border: 1px solid black
     border-top: 1px solid white
@@ -46,6 +52,8 @@ aside
     padding: 5px 0
     width: 180px
 
+// the little sidebar opener button in top-left of
+// window when the sidebar is closed
 .aside-open
   background: #1189d9
   -webkit-border-radius: 0 0 10px 0
