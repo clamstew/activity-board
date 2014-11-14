@@ -2,7 +2,7 @@
 
 (function(app) {
 
-  app.directive('sidebar', function() {
+  app.directive('sidebar', ['$window', function($window) {
     var link = function(scope, element, attrs) {
 
       // initialize sidebar as closed
@@ -17,6 +17,11 @@
         scope.addRepoInputDisplay = !scope.addRepoInputDisplay;
       };
 
+      scope.sidebarHeight = function() {
+        // return $window
+        return $window.innerHeight - 20 + 'px';
+      };
+
     };
 
     return {
@@ -24,6 +29,6 @@
       link: link,
       templateUrl: '../js/views/sidebar.html'
     };
-  });
+  }]);
 
 })(activityBoard.app);

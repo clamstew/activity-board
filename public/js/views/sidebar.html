@@ -8,7 +8,7 @@
 
 <!-- The sidebar html - hidden by default -->
 <!-- (hidden by default - closed when aside opener is shown) -->
-<aside ng-show="sidebarOpen">
+<aside ng-show="sidebarOpen" ng-style="{'height': sidebarHeight() }">
   <!-- three top right icons -->
   <!-- close icon -->
   <div class="close" ng-click="toggleSidebar()">
