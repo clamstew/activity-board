@@ -5,20 +5,10 @@
   app.directive('sidebar', function() {
     var link = function(scope, element, attrs) {
 
-      scope.showSidebar = function() {
-        console.log('toggling showSidebar ...');
-        if (angular.element('aside').css('display') == 'none') {
-          angular.element('aside').css('display', 'block');
-          angular.element('.aside-open').css('display', 'none');
-        }
-      };
-
-      scope.hideSidebar = function() {
-        console.log('toggling hideSidebar ...');
-        if (angular.element('aside').css('display') == 'block') {
-          angular.element('aside').css('display', 'none');
-          angular.element('.aside-open').css('display', 'block');
-        }
+      // initialize sidebar as closed
+      scope.sidebarOpen = false;
+      scope.toggleSidebar = function() {
+        scope.sidebarOpen = !scope.sidebarOpen;
       };
 
       // initialize input box as hidden
