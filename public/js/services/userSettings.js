@@ -2,7 +2,7 @@
 
 (function(app) {
 
-  app.service('userSetting', [function() {
+  app.service('userSettings', [function() {
     // return initialRepos
     var prefs = {};
 
@@ -10,6 +10,12 @@
 
     prefs.setSiteTitle = function() {};
 
+    // user can set
+    // * title
+    // * tagline
+    // * background image
+    // * background color/image sidebar
+    // * show or hide fork me banner
 
     return prefs;
   }]);
