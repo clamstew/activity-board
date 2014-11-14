@@ -2,7 +2,8 @@
 
 (function(app) {
 
-  app.service('repos', ['initialRepos', '$http', function(initialRepos, $http) {
+  app.service('repos', ['initialRepos', '$http', '$log',
+    function(initialRepos, $http, $log) {
     // return initialRepos
     var o = {};
 
@@ -55,10 +56,11 @@
             }).
             error(function(data, status, headers, config) {
               // any ajax call errors
-              console.warn('GET Error from server', status);
+              $log.warn('Error from Github API | status-> ', status);
             });
         });
       }
+      // else { // see if any repos are stored in local storage // otherwise init to empty array of repos}
     };
 
     return o;

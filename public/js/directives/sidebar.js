@@ -32,9 +32,7 @@
     return {
       restrict: 'A',
       link: link,
-      templateUrl: function(elem, attr) {
-        return '../js/views/sidebar.html';
-      }
+      templateUrl: '../js/views/sidebar.html'
     };
   });
 

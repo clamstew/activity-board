@@ -7,12 +7,17 @@
 <!-- (hidden by default - closed when aside opener is shown) -->
 <aside>
   <!-- three top right icons -->
+  <!-- close icon -->
   <div class="close" ng-click="hideSidebar()">
     <i class="fa fa-arrow-circle-left"></i>
   </div>
+  <!-- add repo icon -->
   <div class="add-repo" ng-click="showAddRepoInput()">
-    <i class="fa fa-plus-circle"></i>
+    <i class="fa"
+       ng-class="{'fa-plus-circle': !addRepoInputDisplay,
+                  'fa-minus-circle': addRepoInputDisplay}"></i>
   </div>
+  <!-- help / about modal toggle -->
   <div class="app-info-show">
     <i class="fa fa-info-circle"></i>
   </div>
