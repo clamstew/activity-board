@@ -42,7 +42,7 @@
         <a ng-href="{{ repo.repoLink }}" target="_blank">
           <strong>{{ repo.user }} / {{ repo.repo }}</strong>
         </a>
-        <i style="display:none;" class="fa fa-minus-circle remove"></i>
+        <i class="fa fa-minus-circle remove" ng-click="removeRepo(repo)"></i>
     </div>
   </div>
 

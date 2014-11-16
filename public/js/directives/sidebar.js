@@ -21,6 +21,10 @@
         // return $window
         return $window.innerHeight - 20 + 'px';
       };
+      //@TODO - also make it so it listens to the window resize event
+      //        and resizes the height on that event as well as when it is revealed
+
+      scope.removeRepo = function(repo) {};
 
     };
 
