@@ -1,0 +1,17 @@
+{
+  "name": "angular-ui-keypress",
+  "main": "./keypress.js",
+  "dependencies": {
+    "angular": ">= 1.0.2"
+  },
+  "homepage": "https://github.com/angular-ui/ui-utils",
+  "_release": "keypress-0.1.1",
+  "_resolution": {
+    "type": "tag",
+    "tag": "keypress-0.1.1",
+    "commit": "881c6ed4f764f6014a2290021019251745728350"
+  },
+  "_source": "git://github.com/angular-ui/ui-utils.git",
+  "_target": "keypress-0.1.1",
+  "_originalSource": "angular-ui-utils"
+}

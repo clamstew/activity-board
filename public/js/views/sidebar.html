@@ -4,36 +4,17 @@
   <i class="fa fa-arrow-circle-right"></i>
 </div>
 
-
-
 <!-- The sidebar html - hidden by default -->
 <!-- (hidden by default - closed when aside opener is shown) -->
-<aside ng-show="sidebarOpen" ng-style="{'height': sidebarHeight() }">
-  <!-- four top right icons -->
-  <!-- close icon -->
-  <div class="close" ng-click="toggleSidebar()">
-    <i class="fa fa-arrow-circle-left"></i>
-  </div>
-  <!-- add repo icon -->
-  <div class="add-repo" ng-click="showAddRepoInput()">
-    <i class="fa"
-       ng-class="{'fa-plus-circle': !addRepoInputDisplay,
-                  'fa-minus-circle': addRepoInputDisplay}"></i>
-  </div>
-  <!-- help / about modal toggle -->
-  <div class="app-info-show">
-    <i class="fa fa-info-circle"></i>
-  </div>
-  <!-- settings icon - link to user prefs route -->
-  <div class="nav-prefs-cog" ui-sref="prefs">
-    <i class="fa fa-cog"></i>
-  </div>
+<aside ng-show="sidebarOpen" ng-style="{'min-height': sidebarHeight() }">
+
+  <div sidebar-nav></div>
 
   <!-- list of repos -->
   <h3>Repos</h3>
-  <div ng-show="addRepoInputDisplay">
-    <input type="text" id="add-repo" placeholder='Type "Username/Repo"' />
-  </div>
+
+  <!-- input a new repo -->
+  <input ng-show="addRepoInputDisplay" type="text" id="add-repo" placeholder='Type "Username/Repo"' ng-model="newRepo" ui-keypress="{13:'addRepo($event, newRepo)'}" />
 
   <!-- list of repos here with links and remove -->
   <div class="sidebar-repo-wrap" ng-repeat="repo in repos.repos">

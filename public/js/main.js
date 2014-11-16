@@ -3,7 +3,7 @@
 var activityBoard = (function(angular) {
 
   var _app = angular.module('activityBoard', [
-    'ui.router'//,
+    'ui.router', 'ui.keypress'//,
     //'truncate', 'ui.bootstrap'
     ]);
 
