@@ -15,9 +15,14 @@
               return repos.getAll();
             }]
           }
+        })
+        .state('prefs', {
+          url: '/prefs',
+          templateUrl: '/js/views/preferences/main.html',
+          controller: 'UserSettingsCtrl'
         });
 
-      $urlRouterProvider.otherwise('home');
+      $urlRouterProvider.otherwise('/');
   }]);
 
 })(activityBoard.app);
