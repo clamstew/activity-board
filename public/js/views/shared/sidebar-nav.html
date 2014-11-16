@@ -1,0 +1,26 @@
+<div>
+
+  <!-- four top right icons -->
+  <!-- close icon -->
+  <div class="close" ng-click="toggleSidebar()">
+    <i class="fa fa-arrow-circle-left"></i>
+  </div>
+  <!-- add repo icon -->
+  <div class="add-repo" ng-click="showAddRepoInput()">
+    <i class="fa"
+       ng-class="{'fa-plus-circle': !addRepoInputDisplay,
+                  'fa-minus-circle': addRepoInputDisplay}"></i>
+  </div>
+  <!-- help / about modal toggle -->
+  <div class="app-info-show">
+    <i class="fa fa-info-circle"></i>
+  </div>
+
+  <!-- settings icon - link to user prefs route -->
+  <!--   navigates to prefs state -->
+  <div class="nav-prefs-cog" ui-sref="prefs">
+    <i class="fa fa-cog"></i>
+  </div>
+
+</div>
+
