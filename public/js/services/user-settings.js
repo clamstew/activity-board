@@ -18,14 +18,14 @@
     // and it could look like
     // need to include modernizr and use
     // its checkfor local storage function
-    // prefs.initSiteTitle = function() {
+    // prefs.initSiteTitle = (function() {
     //   // if local storage
     //   // is has key site title
     //   // if site title property is not empty
     //   // then set prefs.siteTitle to the one in LS
     //   // else set it to default
     //   // prefs.siteTitle = 'Always Be Committing';
-    // }
+    // })();
 
     // Site Title
     prefs.siteTitle = 'Always Be Committing';
