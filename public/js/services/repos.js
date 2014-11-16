@@ -7,6 +7,7 @@
     // return initialRepos
     var o = {},
         _private = {
+          // used on commits
           makeUsernameAndLink: function(commitDiffs) {
             var self = this;
             _.each(commitDiffs, function(commit){
@@ -21,6 +22,7 @@
             });
             return commitDiffs;
           },
+          // used on repos
           makeUserLink: function(repo) {
             var link = "http://github.com/" + repo.user;
             return link;
@@ -29,6 +31,7 @@
             var link = "http://github.com/" + repo.user + "/" + repo.repo;
             return link;
           },
+          // private functions
           _: {
             makeDates: function(commit) {
               var currentdatetimeMinusTwo = new Date().minusHours(2)
@@ -92,12 +95,32 @@
     };
 
     o.add = function(userRepoName) {
-      var seperateUserAndRepoName = function(userRepoName) {
+      var userName
+        , repoName
+        , seperateUserAndRepoName = (function(userRepoName) {
         // separate on the slash into array
         // return array;
-      };
+        var array = userRepoName.split("/");
+        userName = array[0];
+        repoName = array[1];
+      })(userRepoName);
 
-
+      var repoUrl = "https://api.github.com/repos/" + userName + "/" + repoName + "/commits";
+      $http.get(repoUrl).
+        success(function(data, status, headers, config) {
+          var repo = { user: userName, repo: repoName };
+          data = _private.makeUsernameAndLink(data);
+          repo.commits = data;
+          repo.userLink = _private.makeUserLink(repo);
+          repo.repoLink = _private.makeRepoLink(repo);
+          // console.log('what is repo', repo);
+          o.repos.push(repo);
+          return {success: true};
+        }).
+        error(function(data, status, headers, config) {
+          $log.warn('Error from Github API | status-> ', status);
+          return {success: false};
+        });
     };
 
     // remove a repo from the this.repos object
