@@ -3,15 +3,7 @@
 (function(app) {
 
   app.directive('sidebarNav', function() {
-      var link = function(scope, element, attrs) {
-
-        // initialize input box as hidden
-        scope.addRepoInputDisplay = false;
-        scope.showAddRepoInput = function() {
-          scope.addRepoInputDisplay = !scope.addRepoInputDisplay;
-        };
-
-      };
+      var link = function(scope, element, attrs) {};
       return {
         restrict: 'A',
         link: link,
