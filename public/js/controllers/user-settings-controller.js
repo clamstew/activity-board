@@ -20,8 +20,6 @@
       // user can set the site's sub title
       $scope.showForkMeBanner = userSettings.showForkMeBanner;
       $scope.setShowForkMeBanner = function() {
-        // will operate off of setting it to the opposite of
-        // what it was set for
         userSettings.setShowForkMeBanner();
       };
 
