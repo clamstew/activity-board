@@ -11,6 +11,9 @@
     o.repos = [];
 
     o.getAll = function() {
+      // don't run this if there are already repos
+      // could make a update function and only use this on init
+      if (this.repos.length) return;
       var createClass = function(date, currentdatetimeMinusTwo, currentdatetimeMinusDay) {
         // add classes for how recent the commit was
         var recent;
