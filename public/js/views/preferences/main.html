@@ -1,0 +1,46 @@
+<div class="aside-open" ui-sref="home">
+  <i class="fa fa-home"></i>
+</div>
+
+<!-- The Fork Me Banner -->
+<div fork-me-banner></div>
+
+
+<!-- The main stage to see the commit activity -->
+<!-- Main Layout -->
+<div id="main-layout-wrap">
+
+  <!-- title header -->
+  <div abc-header></div>
+
+  <div class="row">
+    <div class="medium-6 medium-centered columns">
+      <h2>Preferences</h2>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="medium-6 medium-centered columns">
+      <label>Site Title:
+        <input type="text" placeholder="Site Title" ng-model="siteTitle" ng-change="setSiteTitle()" />
+      </label>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="medium-6 medium-centered columns">
+      <label>Site Subtitle:
+        <input type="text" placeholder="Site Subtitle" ng-model="siteSubTitle" ng-change="setSiteSubTitle()" />
+      </label>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="medium-6 medium-centered columns">
+      <label>Do you want to see the fork-me banner
+        <input type="checkbox" ng-model="showForkMeBanner" ng-change="setShowForkMeBanner()" />
+      </label>
+    </div>
+  </div>
+
+</div>
