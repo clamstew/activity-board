@@ -16,7 +16,7 @@
       },
       {
         user: 'clamstew',
-        repo: 'shout'
+        repo: 'matchsetter'
       }
     ]
   });
