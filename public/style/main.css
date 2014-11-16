@@ -3474,7 +3474,7 @@ aside {
   top: 0;
   width: 200px; }
   /* line 12, /Users/cstewart/code/clay/activity-board/public/style/sidebar */
-  aside .add-repo, aside .app-info-show, aside .close {
+  aside .add-repo, aside .app-info-show, aside .close, aside .nav-prefs-cog {
     cursor: pointer;
     float: right;
     margin-left: 10px;
