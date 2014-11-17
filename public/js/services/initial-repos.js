@@ -17,6 +17,10 @@
       {
         user: 'clamstew',
         repo: 'matchsetter'
+      },
+      {
+        user: 'clamstew',
+        repo: 'timer'
       }
     ]
   });
